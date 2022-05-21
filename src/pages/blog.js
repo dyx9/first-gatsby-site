@@ -2,8 +2,10 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/layout'
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 
 const BlogPage = ({ data }) => {
+    deckDeckGoHighlightElement();
     return(
         <Layout pageTitle="My Blog Page">
 
