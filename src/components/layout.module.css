@@ -11,6 +11,9 @@ body {
 nav {
   background: #222;
   padding: 0 15px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 .a, .nav-link-text{
@@ -29,8 +32,7 @@ nav {
   padding: 10px;
 }
 
-.nav-link-item .nav-link-text:hover,
-.nav-link-item .nav-link-text:hover::after {
+.nav-link-item .nav-link-text:hover {
   background-color: #ccc;
   border-radius: 10px;
   color: black;

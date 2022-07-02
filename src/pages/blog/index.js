@@ -1,17 +1,17 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../../components/layout'
-import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 
 const BlogPage = ({ data }) => {
-    deckDeckGoHighlightElement();
+
     return(
         <Layout pageTitle="My Blog Page">
             {
               data.allMdx.nodes.map(node => (
                   <article key={node.id}>
                       <h2>
-                        <Link to={`/blog/${node.slug}`}>
+                        <Link to={`/blog/${node.slug}`}
+                          style={{color: 'grey'}}>
                           {node.frontmatter.title}
                         </Link>
                       </h2>
