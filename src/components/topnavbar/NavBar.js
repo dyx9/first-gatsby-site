@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useRef, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 import { Link } from 'gatsby';
-import "../components/NavBar.css"
+import "../topnavbar/NavBar.css"
 
 const NavBar = () => {
   const menuRef = useRef(null)

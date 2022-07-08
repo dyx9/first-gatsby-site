@@ -1,0 +1,144 @@
+/* General Rules */
+* {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.mobile-header {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+
+/* General Layout */
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 30%;
+  height: 100vh;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.content {
+  width: 70%;
+  height: 100vh;
+  background-color: bisque;
+  padding: 10px 16px;
+  overflow: auto;
+}
+
+
+
+/* Detailed Rules for Sidebar */
+
+li.logo a {
+  font-size: xx-large;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+}
+
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.sidebar .interactive-area-1 {
+  margin-top: auto;
+  background-color: #7eddff;
+}
+
+.sidebar .side-bar-footer {
+  margin-top: auto;
+  background-color: #fff67b;
+}
+
+
+/* Detailed Rules for Main Content */
+
+.content li {
+  display: block;
+  padding: 16px;
+  background-color: lightcyan;
+  padding: 48px 32px;
+  margin: 2px;;
+}
+
+.content a {
+  font-size: x-large;
+}
+
+.content li p, .content li a {
+  padding: 8px;
+}
+
+
+/* Responsive Design for Mobile */
+@media only screen and (max-width: 768px) {
+
+
+  .mobile-header {
+      background-color: #f1f1f1;
+      position: relative;
+      top: 0;
+      height: auto;
+      padding: 10px 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+  }
+
+  .content {
+      position: absolute;
+      width: 100%;
+      top: 40px;
+      max-height: calc(100vh - 40px);
+  }
+
+  .sidebar.active {
+      top: 40px;
+      display: flex;
+      position: absolute;
+      float: left;
+      width: 40%;
+      z-index: 998;
+      max-height: calc(100vh - 40px);
+  }
+
+  .sidebar, .sidebar > .menu > .logo{
+      display: none;
+  }
+
+  li.logo a {
+    font-size: 16px;
+  }
+
+}

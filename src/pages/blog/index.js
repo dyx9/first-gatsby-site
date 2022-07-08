@@ -1,24 +1,25 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
-import Layout from '../../components/layout'
+import Layout from '../../components/layout/layout'
+import '../../components/layout/layout.css'
 
 const BlogPage = ({ data }) => {
 
     return(
-        <Layout pageTitle="My Blog Page">
-            {
+        <Layout >
+            <ul className='blog'> {
               data.allMdx.nodes.map(node => (
-                  <article key={node.id}>
-                      <h2>
-                        <Link to={`/blog/${node.slug}`}
-                          style={{color: 'grey'}}>
-                          {node.frontmatter.title}
-                        </Link>
-                      </h2>
-                      <p>Posted: {node.frontmatter.date}</p>
-                  </article>
+                <li key={node.id} className='blog-block'>
+                    <a>
+                      <Link to={`/blog/${node.slug}`}
+                        style={{color: 'grey'}}>
+                        {node.frontmatter.title}
+                      </Link>
+                    </a>
+                    <p>Posted: {node.frontmatter.date}</p>
+                </li>
               ))
-            }
+}           </ul>
         </Layout>
     )
 }
