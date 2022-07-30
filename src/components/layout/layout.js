@@ -1,12 +1,31 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useRef, useState, } from 'react';
 import './layout.css'
 import Sidebar from '../sidebar/sidebar'
 
 
-
-
 const Layout = ({ pageTitle, children }) => {
+
+  const sidebarRef = useRef(null)
+  const contentRef = useRef(null)
+  const [openSidebar, setOpenSidebar] = useState(false)
+
+  const onToggle = () => {
+    setOpenSidebar(pre => !pre)
+    updateClassName()
+  }
+
+  const updateClassName = () => {
+    if (sidebarRef.current.className == "sidebar") {
+      sidebarRef.current.className = 'sidebar active'
+      contentRef.current.className = 'content push'
+    }
+    else{
+      sidebarRef.current.className = 'sidebar'
+      contentRef.current.className = 'content'
+    }
+  }
 
   const data = useStaticQuery(graphql`
     query {
@@ -20,11 +39,15 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <div className='container'>
-      <Sidebar />
+      <Sidebar
+        onToggle={onToggle}
+        openSidebar={openSidebar}
+        sidebarRef={sidebarRef}
+      />
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       {/* <header className={siteTitle}>{data.site.siteMetadata.title}</header> */}
-      <main className='content'>
-        <h1 className='heading'>{pageTitle}</h1>
+      <main className='content' ref={contentRef}>
+        {/* <h1 className='heading'>{pageTitle}</h1> */}
         {children}
       </main>
     </div>
