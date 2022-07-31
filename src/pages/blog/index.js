@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout'
 import '../../components/layout/layout.css'
 import imagePlaceHolder from '../../images/Safari.jpeg'
@@ -21,7 +22,10 @@ const BlogPage = ({ data }) => {
                         </div>
 
                         <div className="image-part">
-                            <img src={imagePlaceHolder} />
+                            <GatsbyImage class='img'
+                                image={getImage(node.frontmatter.hero_image)}
+                                alt={node.frontmatter.hero_image_alt}
+                            />
                         </div>
                     </li>
                 ))
@@ -32,18 +36,23 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
 query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    allMdx(sort: {fields: frontmatter___title, order: DESC}) {
       nodes {
         frontmatter {
-          date(formatString: "YYYY, MM D")
+          date(formatString: "YYYY, MM DD")
           title
+          hero_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          hero_image_alt
         }
         id
         slug
       }
     }
   }
-  
   
 `
 
