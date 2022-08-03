@@ -8,7 +8,6 @@ import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/
 
 const BlogPost = ({ data }) => {
     const image = getImage(data.mdx.frontmatter.hero_image)
-    deckDeckGoHighlightElement();
     
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>

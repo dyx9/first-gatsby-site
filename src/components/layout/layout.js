@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useRef, useState, } from 'react';
-import './layout.css'
 import Sidebar from '../sidebar/sidebar'
+import {container, content} from './layout.module.scss'
 
 
 const Layout = ({ pageTitle, children }) => {
@@ -38,7 +38,7 @@ const Layout = ({ pageTitle, children }) => {
   `)
 
   return (
-    <div className='container'>
+    <div className={container}>
       <Sidebar
         onToggle={onToggle}
         openSidebar={openSidebar}
@@ -46,7 +46,7 @@ const Layout = ({ pageTitle, children }) => {
       />
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       {/* <header className={siteTitle}>{data.site.siteMetadata.title}</header> */}
-      <main className='content' ref={contentRef}>
+      <main className={content} ref={contentRef}>
         {/* <h1 className='heading'>{pageTitle}</h1> */}
         {children}
       </main>
