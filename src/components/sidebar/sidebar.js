@@ -1,15 +1,27 @@
 import * as React from 'react'
+import { useState } from 'react'
 import MobileNavbar from '../mobile-navbar/mobile-navbar'
-import '../layout/layout.css'
+import * as styles from '../sidebar/sidebar.module.scss'
 
-const Sidebar = ({onToggle, openSidebar, sidebarRef}) => {
+const Sidebar = () => {
+
+    const [open, setOpen] = useState(false)
+
+    const clickHandler = () => {
+        setOpen(!open)
+        updateClassName()
+    }
+
+    const updateClassName = () => {
+        console.log(styles.sidebar);
+    }
 
   return (
     <>
-        <div className='sidebar' ref={sidebarRef}>
-            <MobileNavbar onToggle={onToggle} openSidebar={openSidebar}/>
-            <ul className='menu'>
-                <li className='logo'>
+        <div className={styles.sidebar + (open ? " " + styles.active : "")} >
+            <MobileNavbar onToggle={clickHandler} open={open}/>
+            <ul className={styles.menu}>
+                <li className={styles.logo}>
                     <a href="/">Yixuan's Website</a>
                 </li>
 
@@ -26,13 +38,13 @@ const Sidebar = ({onToggle, openSidebar, sidebarRef}) => {
                 </li>
             </ul>
 
-            <ul className="interactive-area-1">
+            <ul className={styles.interactiveArea1}>
                 <li className="item"><a href="#">interactive</a></li>
                 <li className="item"><a href="#">interactive</a></li>
                 <li className="item"><a href="#">interactive</a></li>
             </ul>
 
-            <ul className="side-bar-footer">
+            <ul className={styles.sidebarFooter}>
                 <li className="item"><a href="#">footer</a></li>
                 <li className="item"><a href="#">footer</a></li>
             </ul>
