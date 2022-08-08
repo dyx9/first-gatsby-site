@@ -1,11 +1,12 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import MobileNavbar from '../mobile-navbar/mobile-navbar'
 import * as styles from '../sidebar/sidebar.module.scss'
 
 const Sidebar = () => {
 
     const [open, setOpen] = useState(false)
+    const sidebarRef = useRef(null)
 
     const clickHandler = () => {
         setOpen(!open)
@@ -14,11 +15,21 @@ const Sidebar = () => {
 
     const updateClassName = () => {
         console.log(styles.sidebar);
+        console.log(sidebarRef);
+        if (sidebarRef.current.className === styles.sidebar) {
+            sidebarRef.current.className += " " + styles.active;
+        }
+        else {
+            sidebarRef.current.className = styles.sidebar;
+        }
+        
+        console.log(sidebarRef);
     }
 
   return (
     <>
-        <div className={styles.sidebar + (open ? " " + styles.active : "")} >
+        {/* <div className={styles.sidebar + (open ? " " + styles.active : "")} > */}
+        <div className={styles.sidebar} ref={sidebarRef}>
             <MobileNavbar onToggle={clickHandler} open={open}/>
             <ul className={styles.menu}>
                 <li className={styles.logo}>
