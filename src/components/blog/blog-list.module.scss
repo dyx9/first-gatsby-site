@@ -1,0 +1,80 @@
+@use '../../sass/variables' as *;
+
+.post-time, .post-link, .post-brief {
+  padding: 8px;
+}
+
+
+/* blog block */
+.blog-block {
+  display: flex;
+  padding: 16px;
+  background-color: lightcyan;
+  margin: 0 35px;
+  padding: 30px 0;
+  border-bottom: 1px solid hsla(0,0%,50%,.12);
+
+  /* blog content container */
+  .non-image-part {
+    position: relative;
+    width: 70%;
+
+    /* blog title */
+    a {
+      font-size: 32px;
+    }
+
+    /* blog time */
+    .post-time {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  /* blog image container */
+  .image-part {
+    width: 30%;
+
+    /* blog image */
+    .img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+  }
+}
+
+
+/* Responsive Design for Mobile */
+@media only screen and (max-width: 768px) {
+
+  /* change the blog list layout for mobile viewpoint */
+  .blog-block {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+
+    /* blog content container */
+    .non-image-part {
+      width: 100%;
+      order: 2;
+      padding: 15px 20px;
+
+      /* blog time */
+      .post-time {
+        position: unset;
+      }
+    }
+
+    /* blog image container */
+    .image-part {
+      width: 100%;
+      order: 1;
+
+      .img {
+        height: 200px;
+      }
+    }
+  }
+  
+}
