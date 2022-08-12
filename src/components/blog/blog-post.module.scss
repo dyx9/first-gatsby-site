@@ -14,37 +14,41 @@ a:visited {
 }
 
 .title {
-  font-size: 48px;
-  margin: 20px 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: $post-title-font-size;
+  margin: $post-title-margin;
+  font-family: $font-family;
 }
 
 .MDX-body {
-  margin: 0 35px;
+  margin: $post-content-margin;
 
-  p, ul, ol, li, h1, h2, h3, h4, h5, h6 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: lighter;
-    line-height: 1.6;
+  p, p *, ul, ol, li, h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family;
+    font-weight: $post-content-font-weight;
+    line-height: $post-content-line-height;
+
+    strong {
+      font-weight: bold;
+    }
   }
 
   h1 {
-    font-size: 38px;
-    margin: 20px 0;
+    font-size: $h1-font-size;
+    margin: $h1-margin;
   }
 
   h2 {
-    font-size: 28px;
-    margin: 10px 0 0 0;
+    font-size: $h2-font-size;
+    margin: $h2-margin;
   }
 
   ul, ol, li {
-    list-style-type: initial;
-    margin: 0 10px 5px 10px;
+    list-style-type: $post-contnet-list-style;
+    margin: $post-contnet-list-margin
   }
 
   p, ul, ol, li {
-    font-size: 20px;
+    font-size: $post-content-font-size;
   }
 
   pre {
