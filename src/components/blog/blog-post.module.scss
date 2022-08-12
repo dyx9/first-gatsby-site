@@ -1,1 +1,57 @@
 @use '../../sass/variables' as *;
+
+
+a {
+  color: cornflowerblue;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.hero-image {
+  max-height: 300px;
+}
+
+.title {
+  font-size: 48px;
+  margin: 20px 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.MDX-body {
+  margin: 0 35px;
+
+  p, ul, ol, li, h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 38px;
+    margin: 20px 0;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin: 10px 0 0 0;
+  }
+
+  ul, ol, li {
+    list-style-type: initial;
+    margin: 0 10px 5px 10px;
+  }
+
+  p, ul, ol, li {
+    font-size: 20px;
+  }
+
+  pre {
+    margin: 20px;
+  }
+}
+  
+
+
+
