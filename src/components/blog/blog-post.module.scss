@@ -19,6 +19,10 @@ a:visited {
   font-family: $font-family;
 }
 
+.date {
+  margin: $post-title-margin
+}
+
 .MDX-body {
   margin: $post-content-margin;
 
