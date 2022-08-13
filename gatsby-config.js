@@ -6,6 +6,8 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    `gatsby-plugin-sass`,
 
     {
       resolve: "gatsby-source-filesystem",
@@ -22,12 +24,13 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-highlight-code`,
+            options: {
+              theme: "solarized-light",
+            },
           },
         ],
       },
     },
 
-    "gatsby-transformer-sharp",
-    `gatsby-plugin-sass`,
   ],
 }

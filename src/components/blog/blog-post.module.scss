@@ -63,3 +63,25 @@ a:visited {
 
 
 
+deckgo-highlight-code {
+  position: relative;
+  --deckgo-highlight-code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --deckgo-highlight-code-carbon-background: #fbf2e9;
+  --deckgo-highlight-code-carbon-box-shadow: none;
+  --deckgo-highlight-code-carbon-toolbar-display: none;
+  --deckgo-highlight-code-padding: 30px 30px 10px 30px;
+  margin: 20px;
+
+  &::before {
+    content: attr(language);
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;;
+    text-transform: uppercase;
+    position: absolute;
+    margin-left: 20px;
+    padding: 5px 10px;
+    background-color: rgb(247, 223, 30);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+}
