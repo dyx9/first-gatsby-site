@@ -27,7 +27,7 @@ The `addEventListener` can take up to **3** parameters, the third one is optiona
 
 ## Remove an Event Listener
 
-- To remove an event listener, the callback function you pass into `removeEventListener` should be exactly the same as the one you passed into `addEventListener`before.
+- To remove an event listener, the callback function you pass into `removeEventListener` should be exactly the same as the one you passed into `addEventListener` before.
 
 ```jsx
 button.addEventListener("click", sayHi)
@@ -126,7 +126,7 @@ The above code shows a common situation that the newly added button won’t have
 
 ```jsx
 document.addEventListener("click", e => {
-  if (e.target.matches("button")) {                                       (*)
+  if (e.target.matches("button")) {                           (*)
     console.log("Clicked Button")
   }
 })

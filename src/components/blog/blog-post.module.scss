@@ -1,10 +1,6 @@
 @use '../../sass/variables' as *;
 
 
-a {
-  color: cornflowerblue;
-}
-
 a:visited {
   color: inherit;
 }
@@ -30,6 +26,17 @@ a:visited {
     font-family: $font-family;
     font-weight: $post-content-font-weight;
     line-height: $post-content-line-height;
+
+    a {
+      color: cornflowerblue;
+      font-family: $font-family;
+      font-size: inherit;
+      text-decoration: underline;
+
+      &:visited {
+        color: cornflowerblue;
+      }
+    }
 
     strong {
       font-weight: bold;
@@ -78,6 +85,7 @@ deckgo-highlight-code {
   --deckgo-highlight-code-carbon-box-shadow: none;
   --deckgo-highlight-code-carbon-toolbar-display: none;
   --deckgo-highlight-code-padding: 30px 30px 10px 30px;
+  --deckgo-highlight-code-container-width: 700px;
   margin: 20px;
 
   &::before {
