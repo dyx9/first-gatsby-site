@@ -6,7 +6,7 @@ a:visited {
 }
 
 .hero-image {
-  max-height: 300px;
+  max-height: 400px;
 }
 
 .title {
@@ -28,13 +28,16 @@ a:visited {
     line-height: $post-content-line-height;
 
     a {
-      color: cornflowerblue;
+      color: $link-colour-unvisited;
       font-family: $font-family;
       font-size: inherit;
-      text-decoration: underline;
 
       &:visited {
-        color: cornflowerblue;
+        color: $link-colour-visited;
+      }
+
+      &:hover {
+        text-decoration: underline;
       }
     }
 
@@ -43,8 +46,8 @@ a:visited {
     }
 
     code {
-      background-color: rgb(251,242,233);
-      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background-color: $code-bg-colour;
+      font-family: $code-font-family;
       margin: 0 2px;
       padding: 2px 5px;
       border-radius: 5px;
@@ -73,6 +76,28 @@ a:visited {
   pre {
     margin: 20px;
   }
+
+  @media only screen and (max-width: $mobile-device-max-width) {
+    h1 {
+      font-size: $mobile-h1-font-size;
+      margin: $h1-margin;
+    }
+  
+    h2 {
+      font-size: $mobile-h2-font-size;
+      margin: $h2-margin;
+    }
+  
+    ul, ol, li {
+      list-style-type: $mobile-post-content-font-size;
+      margin: $post-contnet-list-margin
+    }
+  
+    p, ul, ol, li {
+      font-size: $mobile-post-content-font-size;
+    }
+  }
+
 }
   
 
@@ -80,8 +105,8 @@ a:visited {
 
 deckgo-highlight-code {
   position: relative;
-  --deckgo-highlight-code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --deckgo-highlight-code-carbon-background: #fbf2e9;
+  --deckgo-highlight-code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;;
+  --deckgo-highlight-code-carbon-background: rgb(251,242,233);
   --deckgo-highlight-code-carbon-box-shadow: none;
   --deckgo-highlight-code-carbon-toolbar-display: none;
   --deckgo-highlight-code-padding: 30px 30px 10px 30px;
@@ -90,12 +115,12 @@ deckgo-highlight-code {
 
   &::before {
     content: attr(language);
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;;
+    font-family: $code-font-family;
     text-transform: uppercase;
     position: absolute;
     margin-left: 20px;
     padding: 5px 10px;
-    background-color: rgb(247, 223, 30);
+    background-color: rgb(247, 223, 30);;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }

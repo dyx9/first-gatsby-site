@@ -11,7 +11,7 @@ const BlogPost = ({ frontmatter, body }) => {
 
   return (
     <>
-      <a href={frontmatter.hero_image_credit_link}>
+      <a href={frontmatter.hero_image_credit_link} target="_blank">
         <GatsbyImage
           className={styles.heroImage}
           image={getImage(frontmatter.hero_image)}

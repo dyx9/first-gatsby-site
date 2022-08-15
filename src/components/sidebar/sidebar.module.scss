@@ -43,7 +43,7 @@
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $mobile-device-max-width) {
 	.sidebar {
 		padding-top: $header-height;
 		position: fixed;
@@ -70,7 +70,7 @@
 	display: none;
 
 	/* Responsive Design for Mobile */
-	@media only screen and (max-width: 768px) {
+	@media only screen and (max-width: $mobile-device-max-width) {
     background-color: #f1f1f1;
     position: fixed;
     top: 0;

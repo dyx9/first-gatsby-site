@@ -46,7 +46,7 @@
 
 
 /* Responsive Design for Mobile */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $mobile-device-max-width) {
 
   /* change the blog list layout for mobile viewpoint */
   .blog-block {

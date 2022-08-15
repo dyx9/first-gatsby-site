@@ -1,21 +1,36 @@
 $sidebar-width: 60%;
 $header-height: 60px;
 
+$mobile-device-max-width: 960px;
+
 // speccification for posts
 $font-family: Georgia, 'Times New Roman', Times, serif;
-$post-title-font-size: 48px;
+$post-title-font-size: 3rem;
 $post-title-margin: 10px 35px;
 
 $post-content-margin: 50px 35px 0 35px;
 $post-content-font-weight: lighter;
 $post-content-line-height: 1.6;
-$post-content-font-size: 20px;
+$post-content-font-size: 1.4rem;
 
-$h1-font-size: 38px;
+$h1-font-size: 2.5rem;
 $h1-margin: 20px 0 5px 0;
 
-$h2-font-size: 28px;
+$h2-font-size: 2rem;
 $h2-margin: 15px 0 5px 0;
 
 $post-contnet-list-style: initial;
 $post-contnet-list-margin: 0 10px 5px 10px;
+
+$link-colour-unvisited: cornflowerblue;
+$link-colour-visited: cornflowerblue;
+
+$code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$code-bg-colour: rgb(251,242,233);
+
+
+// for mobile 
+$mobile-post-title-font-size: 2.2rem;
+$mobile-h1-font-size: 1.8rem;
+$mobile-h2-font-size: 1.5rem;
+$mobile-post-content-font-size: 1.2rem
