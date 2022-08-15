@@ -13,10 +13,14 @@ a:visited {
   font-size: $post-title-font-size;
   margin: $post-title-margin;
   font-family: $font-family;
+
+  @media only screen and (max-width: $mobile-device-max-width) {
+    font-size: $mobile-post-title-font-size;
+  }
 }
 
 .date {
-  margin: $post-title-margin
+  margin: $post-title-margin;
 }
 
 .MDX-body {
@@ -78,6 +82,8 @@ a:visited {
   }
 
   @media only screen and (max-width: $mobile-device-max-width) {
+
+
     h1 {
       font-size: $mobile-h1-font-size;
       margin: $h1-margin;
@@ -86,11 +92,6 @@ a:visited {
     h2 {
       font-size: $mobile-h2-font-size;
       margin: $h2-margin;
-    }
-  
-    ul, ol, li {
-      list-style-type: $mobile-post-content-font-size;
-      margin: $post-contnet-list-margin
     }
   
     p, ul, ol, li {
