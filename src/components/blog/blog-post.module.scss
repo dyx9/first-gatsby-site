@@ -16,6 +16,7 @@ a:visited {
 
   @media only screen and (max-width: $mobile-device-max-width) {
     font-size: $mobile-post-title-font-size;
+    margin: $mobile-post-title-margin;
   }
 }
 
@@ -24,6 +25,7 @@ a:visited {
 }
 
 .MDX-body {
+  word-break: break-word;
   margin: $post-content-margin;
 
   p, p *, ul, ol, li, h1, h2, h3, h4, h5, h6 {
@@ -49,7 +51,9 @@ a:visited {
       font-weight: bold;
     }
 
+    // in-line code
     code {
+      font-size: inherit;
       background-color: $code-bg-colour;
       font-family: $code-font-family;
       margin: 0 2px;
@@ -83,6 +87,8 @@ a:visited {
 
   @media only screen and (max-width: $mobile-device-max-width) {
 
+    margin: $mobile-post-content-margin;
+
 
     h1 {
       font-size: $mobile-h1-font-size;
@@ -103,7 +109,7 @@ a:visited {
   
 
 
-
+// code hilight block
 deckgo-highlight-code {
   position: relative;
   --deckgo-highlight-code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;;
@@ -112,7 +118,9 @@ deckgo-highlight-code {
   --deckgo-highlight-code-carbon-toolbar-display: none;
   --deckgo-highlight-code-padding: 30px 30px 10px 30px;
   --deckgo-highlight-code-container-width: 700px;
-  margin: 20px;
+  margin: 20px auto;
+  max-width: 760px;
+  
 
   &::before {
     content: attr(language);
@@ -126,4 +134,19 @@ deckgo-highlight-code {
     border-bottom-right-radius: 5px;
   }
 
+  @media only screen and (max-width: $mobile-device-max-width) {
+    font-size: $mobile-post-content-font-size * 0.8;
+    --deckgo-highlight-code-padding: 15px 10px 5px 10px;
+    --deckgo-highlight-code-container-width: 600px;
+    margin: 15px auto; 
+
+    &::before {
+      font-size: 12px;
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: rgb(247, 223, 30);;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
 }
