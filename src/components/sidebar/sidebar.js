@@ -29,11 +29,11 @@ const Sidebar = () => {
 
         {/* mobile header */}
         <ul className={styles.mobileHeader}>
-              <li onClick={clickHandler}>
+            <li className={styles.logo}> <a href="/">Yixuan's Website</a> </li>
+            <li onClick={clickHandler}>
                 {!open &&<a><MdMenu /></a>}
                 {open &&<a><MdClose /></a>}
               </li>
-              <li className={styles.logo}> <a href="/">Yixuan's Website</a> </li>
         </ul>
 
         <ul className={styles.menu}>
