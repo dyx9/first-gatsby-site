@@ -11,7 +11,7 @@ const BlogPost = ({ frontmatter, body }) => {
 
   return (
     <>
-      <a href={frontmatter.hero_image_credit_link} target="_blank">
+      <a href={frontmatter.hero_image_credit_link} target="_blank" rel="noreferrer">
         <GatsbyImage
           className={styles.heroImage}
           image={getImage(frontmatter.hero_image)}
@@ -20,7 +20,12 @@ const BlogPost = ({ frontmatter, body }) => {
       </a>
 
       <p className={styles.title}>{frontmatter.title}</p>
-      <p className={styles.date}>{frontmatter.date}</p>
+      <p className={styles.date}>Date Created: {frontmatter.date}</p>
+      
+      { frontmatter.date_updated && 
+        <p className={styles.date}>Date Modified: {frontmatter.date_updated}</p>
+      }
+
 
       <div className={styles.MDXBody}>
         <MDXRenderer>

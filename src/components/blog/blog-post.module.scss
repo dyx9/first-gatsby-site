@@ -22,6 +22,7 @@ a:visited {
 
 .date {
   margin: $post-title-margin;
+  font-family: $font-family;
 }
 
 .MDX-body {
@@ -53,7 +54,7 @@ a:visited {
 
     // in-line code
     code {
-      font-size: inherit;
+      font-size: $post-content-font-size * 0.8;
       background-color: $code-bg-colour;
       font-family: $code-font-family;
       margin: 0 2px;
@@ -102,6 +103,10 @@ a:visited {
   
     p, ul, ol, li {
       font-size: $mobile-post-content-font-size;
+
+      code {
+        font-size: $mobile-post-content-font-size * 0.9;
+      }
     }
   }
 
@@ -136,6 +141,7 @@ deckgo-highlight-code {
 
   @media only screen and (max-width: $mobile-device-max-width) {
     font-size: $mobile-post-content-font-size * 0.8;
+    -webkit-text-size-adjust: none;
     --deckgo-highlight-code-padding: 15px 10px 5px 10px;
     --deckgo-highlight-code-container-width: 600px;
     margin: 15px auto; 
