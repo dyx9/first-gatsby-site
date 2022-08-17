@@ -28,6 +28,8 @@ module.exports = {
               theme: "solarized-light",
             },
           },
+          
+          `gatsby-remark-autolink-headers`,
         ],
       },
     },

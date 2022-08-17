@@ -3,9 +3,10 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from './blog-post.module.scss';
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+import TableOfContents from './table-of-contents';
 
 
-const BlogPost = ({ frontmatter, body }) => {
+const BlogPost = ({ frontmatter, body, tableOfContents }) => {
 
   deckDeckGoHighlightElement();
 
@@ -26,6 +27,7 @@ const BlogPost = ({ frontmatter, body }) => {
         <p className={styles.date}>Date Modified: {frontmatter.date_updated}</p>
       }
 
+      <TableOfContents items={tableOfContents} />
 
       <div className={styles.MDXBody}>
         <MDXRenderer>

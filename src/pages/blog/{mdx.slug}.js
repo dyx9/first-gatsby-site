@@ -7,12 +7,14 @@ import BlogPost from '../../components/blog/blog-post';
 const BlogPage = ({ data }) => {
   const frontmatter = data.mdx.frontmatter;
   const body = data.mdx.body;
+  const tableOfContents = data.mdx.tableOfContents.items;
 
   return (
     <Layout pageTitle={frontmatter.title}>
       <BlogPost 
         frontmatter={frontmatter}
         body={body}
+        tableOfContents={tableOfContents}
       />
     </Layout>
   )
@@ -35,6 +37,7 @@ export const query = graphql`
         hero_image_credit_text
         title
       }
+      tableOfContents
     }
   }  
 `
