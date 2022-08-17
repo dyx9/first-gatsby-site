@@ -27,7 +27,9 @@ const BlogPost = ({ frontmatter, body, tableOfContents }) => {
         <p className={styles.date}>Date Modified: {frontmatter.date_updated}</p>
       }
 
-      <TableOfContents items={tableOfContents} />
+      {tableOfContents &&
+        <TableOfContents items={tableOfContents} />
+      }
 
       <div className={styles.MDXBody}>
         <MDXRenderer>
