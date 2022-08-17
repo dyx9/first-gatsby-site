@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from './blog-post.module.scss';
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 import TableOfContents from './table-of-contents';
+import Sidebar from '../sidebar/sidebar';
 
 
 const BlogPost = ({ frontmatter, body, tableOfContents }) => {
@@ -12,6 +13,8 @@ const BlogPost = ({ frontmatter, body, tableOfContents }) => {
 
   return (
     <>
+      <Sidebar />
+      <div className={styles.content}>
       <a href={frontmatter.hero_image_credit_link} target="_blank" rel="noreferrer">
         <GatsbyImage
           className={styles.heroImage}
@@ -36,9 +39,9 @@ const BlogPost = ({ frontmatter, body, tableOfContents }) => {
           {body}
         </MDXRenderer>
       </div>
-
-
+    </div>
     </>
+
   )
 }
 
