@@ -33,8 +33,25 @@
 	}
 
 	.sidebar-footer {
-		margin-top: auto;
-		background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(245, 221, 0));
+    p, a {
+      font-size: 0.85em;
+    }
+    margin: auto 2em 2em auto;
+    a {
+      padding: 0;
+      display: inline;
+      color: $link-colour-unvisited;
+
+      &:hover {
+        color: $link-colour-unvisited;
+        background: none;
+        text-decoration: underline;
+      }
+
+      &:visited {
+        background-color: $link-colour-visited;
+      }
+    }
 	}
 
 	.menu .logo a {

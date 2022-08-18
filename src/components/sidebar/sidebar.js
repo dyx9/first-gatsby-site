@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useState, useRef } from 'react'
 import { MdClose, MdMenu } from 'react-icons/md';
 import TableOfContents from '../blog/table-of-contents';
+import Footer from '../footer/footer';
 import * as styles from '../sidebar/sidebar.module.scss'
 
 const Sidebar = ({ toc }) => {
@@ -53,8 +54,7 @@ const Sidebar = ({ toc }) => {
         </ul>
 
         <ul className={styles.sidebarFooter}>
-          <li> <a href="#">footer</a> </li>
-          <li> <a href="#">footer</a> </li>
+          <Footer />
         </ul>
       </div>
     </>

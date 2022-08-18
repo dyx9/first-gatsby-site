@@ -2,7 +2,14 @@ module.exports = {
   siteMetadata: {
     title: `first gatsby site`,
     siteUrl: `https://www.yourdomain.tld`,
+    description: `tba`,
+    footer: {
+      powered: `https://www.gatsbyjs.com`,
+      inspired: `https://github.com/izackwu/gatsby-starter-breeze`,
+      copyright: `https://github.com/dyx9`,
+    },
   },
+
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
