@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { useState, useRef } from 'react'
 import { MdClose, MdMenu } from 'react-icons/md';
+import TableOfContents from '../blog/table-of-contents';
 import * as styles from '../sidebar/sidebar.module.scss'
 
-const Sidebar = () => {
+const Sidebar = ({ toc }) => {
 
   const [open, setOpen] = useState(false)
   const sidebarRef = useRef(null)
@@ -44,9 +45,11 @@ const Sidebar = () => {
         </ul>
 
         <ul className={styles.interactiveArea1}>
-          <li> <a href="#">interactive</a> </li>
-          <li> <a href="#">interactive</a> </li>
-          <li> <a href="#">interactive</a> </li>
+
+          { toc &&
+          <TableOfContents items={toc} />
+          }
+
         </ul>
 
         <ul className={styles.sidebarFooter}>
