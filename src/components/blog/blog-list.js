@@ -21,8 +21,7 @@ const BlogList = ({ nodes }) => {
                     {node.frontmatter.title} 
                   </Link>
                   <p className={styles.postBrief}>
-                      This is is a short and general introduction of a blog post, 
-                      this should normally takes up to two lines of the blog block
+                    {node.frontmatter.description}
                   </p>
                   <p className={styles.postTime}>Posted: {node.frontmatter.date}</p>
               </div>

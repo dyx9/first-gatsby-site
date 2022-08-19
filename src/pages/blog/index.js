@@ -13,12 +13,13 @@ const BlogPage = ({ data }) => {
 }
 
 export const query = graphql`
-query {
-    allMdx(sort: {fields: frontmatter___title, order: DESC}) {
+  query {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
       nodes {
         frontmatter {
-          date(formatString: "YYYY, MM DD")
           title
+          description
+          date(formatString: "DD MM YYYY")
           hero_image {
             childImageSharp {
               gatsbyImageData
@@ -31,7 +32,6 @@ query {
       }
     }
   }
-  
 `
 
 

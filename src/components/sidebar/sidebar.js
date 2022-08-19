@@ -5,6 +5,7 @@ import TableOfContents from '../blog/table-of-contents';
 import Footer from './footer/footer';
 import * as styles from '../sidebar/sidebar.module.scss'
 import SocialLinks from './social-links/social-links';
+import { Link } from 'gatsby';
 
 const Sidebar = ({ toc }) => {
 
@@ -41,14 +42,16 @@ const Sidebar = ({ toc }) => {
 
         <ul className={styles.menu}>
           <li className={styles.logo}> <a href="/">Yixuan's Website</a> </li>
-          <li> <a href="/about">About</a> </li>
-          <li> <a href="/blog">Blog</a> </li>
-          <li> <a hrefo="/">Contact</a> </li>
+          <li> <Link href="/about">About</Link> </li>
+          <li> <Link href="/blog">Blog</Link> </li>
+          <li> <Link href="/">Contact</Link> </li>
+          <li> <Link href="/">Placeholder</Link> </li>
+          <li> <Link href="/">Placeholder</Link> </li>
+
+          <SocialLinks />
         </ul>
 
         <ul className={styles.interactiveArea1}>
-
-          <SocialLinks />
 
           { toc &&
           <TableOfContents items={toc} />

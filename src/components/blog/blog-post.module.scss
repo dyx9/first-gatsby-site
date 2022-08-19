@@ -74,6 +74,16 @@ a:visited {
     margin: $h2-margin;
   }
 
+  h3 {
+    font-size: $h3-font-size;
+    margin: $h3-margin;
+  }
+
+  h4 {
+    font-size: $h4-font-size;
+    margin: $h4-margin;
+  }
+
   ul, ol, li {
     list-style-type: $post-contnet-list-style;
     margin: $post-contnet-list-margin
@@ -100,6 +110,16 @@ a:visited {
     h2 {
       font-size: $mobile-h2-font-size;
       margin: $h2-margin;
+    }
+
+    h2 {
+      font-size: $mobile-h3-font-size;
+      margin: $h3-margin;
+    }
+
+    h2 {
+      font-size: $mobile-h4-font-size;
+      margin: $h4-margin;
     }
   
     p, ul, ol, li {

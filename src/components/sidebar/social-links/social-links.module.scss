@@ -2,7 +2,17 @@
 @use '../../../sass/variables' as *;
 
 
-.social-link-container a {
-  display: inline;
-  white-space: nowrap;
+.social-link-container 
+
+  a {
+    display: inline;
+    white-space: nowrap;
+
+    &:visited {
+      color: black;
+    }
+
+    &:hover {
+      color: black;
+    }
 }
