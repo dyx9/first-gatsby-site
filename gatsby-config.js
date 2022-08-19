@@ -8,6 +8,12 @@ module.exports = {
       inspired: `https://github.com/izackwu/gatsby-starter-breeze`,
       copyright: `https://github.com/dyx9`,
     },
+    social: {
+      email: `mailto:tba@tba.com`,
+      github: `https://github.com/dyx9`,
+      linkedin: `https://www.linkedin.com/in/dyx9/`,
+      twitter: `https://twitter.com/yixuan_9`
+    },
   },
 
   plugins: [

@@ -2,8 +2,9 @@ import * as React from 'react'
 import { useState, useRef } from 'react'
 import { MdClose, MdMenu } from 'react-icons/md';
 import TableOfContents from '../blog/table-of-contents';
-import Footer from '../footer/footer';
+import Footer from './footer/footer';
 import * as styles from '../sidebar/sidebar.module.scss'
+import SocialLinks from './social-links/social-links';
 
 const Sidebar = ({ toc }) => {
 
@@ -46,6 +47,8 @@ const Sidebar = ({ toc }) => {
         </ul>
 
         <ul className={styles.interactiveArea1}>
+
+          <SocialLinks />
 
           { toc &&
           <TableOfContents items={toc} />
