@@ -12,7 +12,8 @@ module.exports = {
       email: `mailto:tba@tba.com`,
       github: `https://github.com/dyx9`,
       linkedin: `https://www.linkedin.com/in/dyx9/`,
-      twitter: `https://twitter.com/yixuan_9`
+      twitter: `https://twitter.com/yixuan_9`,
+      telegram: `https://tba.com`,
     },
   },
 

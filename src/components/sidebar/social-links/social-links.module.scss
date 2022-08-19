@@ -1,2 +1,8 @@
 @use '../../../sass/base' as *;
 @use '../../../sass/variables' as *;
+
+
+.social-link-container a {
+  display: inline;
+  white-space: nowrap;
+}
