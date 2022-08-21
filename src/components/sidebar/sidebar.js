@@ -33,7 +33,7 @@ const Sidebar = ({ toc }) => {
 
         {/* mobile header */}
         <ul className={styles.mobileHeader}>
-            <li className={styles.logo}> <a href="/">Yixuan's Website</a> </li>
+            <li className={styles.logo}> <Link to="/">Yixuan's Website</Link> </li>
             <li onClick={clickHandler}>
                 {!open &&<a><MdMenu /></a>}
                 {open &&<a><MdClose /></a>}
@@ -41,12 +41,12 @@ const Sidebar = ({ toc }) => {
         </ul>
 
         <ul className={styles.menu}>
-          <li className={styles.logo}> <a href="/">Yixuan's Website</a> </li>
-          <li> <Link href="/about">About</Link> </li>
-          <li> <Link href="/blog">Blog</Link> </li>
-          <li> <Link href="/">Contact</Link> </li>
-          <li> <Link href="/">Placeholder</Link> </li>
-          <li> <Link href="/">Placeholder</Link> </li>
+          <li className={styles.logo}> <Link to="/">Yixuan's Website</Link> </li>
+          <li> <Link to="/about">About</Link> </li>
+          <li> <Link to="/blog">Blog</Link> </li>
+          <li> <Link to="/">Contact</Link> </li>
+          <li> <Link to="/">Placeholder</Link> </li>
+          <li> <Link to="/">Placeholder</Link> </li>
 
           <SocialLinks />
         </ul>

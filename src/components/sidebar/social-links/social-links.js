@@ -44,6 +44,8 @@ const SocialLinks = () => {
         return <FiLinkedin />
       case 'telegram':
         return <TbBrandTelegram />
+      default:
+        break;
     }
   }
 

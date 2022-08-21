@@ -9,7 +9,7 @@ const TableOfContents = ({ items }) => {
       <ol>
         {items.map(i => (
           <li key={i.url}>
-            <Link to={i.url} className={styles.test}>
+            <Link to={i.url}>
               {i.title}
             </Link>
             {i.items && renderItemsRecursively(i.items)}
