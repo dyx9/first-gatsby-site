@@ -1,7 +1,10 @@
 import * as React from 'react'
 import { graphql } from 'gatsby';
 import Layout from '../../components/layout/layout'
+import Sidebar from '../../components/sidebar/sidebar';
+import Main from '../../components/layout/main';
 import BlogPost from '../../components/blog/blog-post';
+
 
 
 const BlogPage = ({ data }) => {
@@ -11,11 +14,13 @@ const BlogPage = ({ data }) => {
 
   return (
     <Layout pageTitle={frontmatter.title}>
-      <BlogPost 
-        frontmatter={frontmatter}
-        body={body}
-        tableOfContents={tableOfContents}
-      />
+      <Sidebar toc={tableOfContents}/>
+      <Main>
+        <BlogPost 
+          frontmatter={frontmatter}
+          body={body}
+        />         
+      </Main>
     </Layout>
   )
 }

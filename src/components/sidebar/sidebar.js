@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { useState, useRef } from 'react'
+import { Link } from 'gatsby';
 import { MdClose, MdMenu } from 'react-icons/md';
-import TableOfContents from '../blog/table-of-contents';
-import Footer from './footer/footer';
 import * as styles from '../sidebar/sidebar.module.scss'
 import SocialLinks from './social-links/social-links';
-import { Link } from 'gatsby';
+import TableOfContents from '../blog/table-of-contents';
+import Footer from './footer/footer';
 
 const Sidebar = ({ toc }) => {
 
@@ -47,9 +47,9 @@ const Sidebar = ({ toc }) => {
           <li> <Link to="/">Contact</Link> </li>
           <li> <Link to="/">Placeholder</Link> </li>
           <li> <Link to="/">Placeholder</Link> </li>
-
-          <SocialLinks />
         </ul>
+
+        <SocialLinks />
 
         <ul className={styles.interactiveArea1}>
 

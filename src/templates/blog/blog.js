@@ -1,14 +1,22 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout/layout'
+import Sidebar from '../../components/sidebar/sidebar';
+import Main from '../../components/layout/main';
 import BlogList from '../../components/blog/blog-list';
 import Pagination from '../../components/blog/pagination';
+
+
 
 const BlogPage = ({data, pageContext}) => {
 
     return (
         <Layout pageTitle="Blog">
-          <BlogList nodes={data.allMdx.nodes} pageContext={pageContext}/>
+          <Sidebar />
+          <Main>
+            <BlogList nodes={data.allMdx.nodes} pageContext={pageContext}/>
+            <Pagination pageContext={pageContext} />
+          </Main>
         </Layout>
     )
 }

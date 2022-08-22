@@ -4,13 +4,11 @@ import {
   FiTwitter,
   FiLinkedin,
 } from 'react-icons/fi'
-
-import { TbBrandTelegram } from 'react-icons/tb'
-
-import { graphql, useStaticQuery } from 'gatsby'
-import * as styles from './social-links.module.scss';
-
 import React from 'react'
+import * as styles from './social-links.module.scss';
+import { TbBrandTelegram } from 'react-icons/tb'
+import { graphql, useStaticQuery } from 'gatsby'
+
 
 const SocialLinks = () => {
 

@@ -1,19 +1,16 @@
 import * as React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import * as styles from './blog-post.module.scss';
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-import Sidebar from '../sidebar/sidebar';
+import * as styles from './blog-post.module.scss';
 
 
-const BlogPost = ({ frontmatter, body, tableOfContents }) => {
+const BlogPost = ({ frontmatter, body }) => {
 
   deckDeckGoHighlightElement();
 
   return (
     <>
-      <Sidebar toc={tableOfContents}/>
-      <div className={styles.content}>
       <a href={frontmatter.hero_image_credit_link} target="_blank" rel="noreferrer">
         <GatsbyImage
           className={styles.heroImage}
@@ -34,7 +31,6 @@ const BlogPost = ({ frontmatter, body, tableOfContents }) => {
           {body}
         </MDXRenderer>
       </div>
-    </div>
     </>
 
   )
