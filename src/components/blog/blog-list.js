@@ -3,9 +3,10 @@ import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from './blog-list.module.scss';
 import Sidebar from '../sidebar/sidebar';
+import Pagination from './pagination';
 
 
-const BlogList = ({ nodes }) => {
+const BlogList = ({ nodes, pageContext }) => {
 
   return (
     <>
@@ -36,7 +37,9 @@ const BlogList = ({ nodes }) => {
             </li>
           ))
         } </ul>
+          <Pagination pageContext={pageContext} />
       </div>
+
     </>
   )
 }

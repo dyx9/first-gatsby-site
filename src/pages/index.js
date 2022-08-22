@@ -2,8 +2,12 @@ import * as React from 'react'
 import Layout from '../components/layout/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Sidebar from '../components/sidebar/sidebar'
+import { graphql } from 'gatsby'
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+
+  console.log('From index: '+ data)
+
   return (
     <Layout pageTitle="Home Page">
       <Sidebar />
@@ -15,5 +19,16 @@ const IndexPage = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 2000) {
+      nodes {
+        slug
+      }
+    }
+  }
+
+`
 
 export default IndexPage

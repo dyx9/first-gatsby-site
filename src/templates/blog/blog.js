@@ -1,20 +1,27 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout/layout'
-import Blog from '../../components/blog/blog-list';
+import BlogList from '../../components/blog/blog-list';
+import Pagination from '../../components/blog/pagination';
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({data, pageContext}) => {
 
     return (
         <Layout pageTitle="Blog">
-          <Blog nodes={data.allMdx.nodes} />
+          <BlogList nodes={data.allMdx.nodes} pageContext={pageContext}/>
         </Layout>
     )
 }
 
 export const query = graphql`
-  query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+  query($skip: Int!, $limit: Int!) {
+    allMdx(
+      sort: {
+        fields: frontmatter___date
+        order: DESC}
+        limit: $limit
+        skip: $skip
+      ) {
       nodes {
         frontmatter {
           title
@@ -31,7 +38,7 @@ export const query = graphql`
         slug
       }
     }
-  }
+  }  
 `
 
 
