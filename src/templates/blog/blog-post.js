@@ -7,7 +7,6 @@ import BlogPost from '../../components/blog/blog-post';
 import Pagination from '../../components/blog/pagination';
 
 
-
 const BlogPage = ({ data, pageContext }) => {
   const frontmatter = data.mdx.frontmatter;
   const body = data.mdx.body;
@@ -42,8 +41,8 @@ const BlogPage = ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query($id: String) {
-    mdx(id: {eq: $id}) {
+  query($slug: String) {
+    mdx(slug: {eq: $slug}) {
       body
       frontmatter {
         date(formatString: "DD MM YYYY")
