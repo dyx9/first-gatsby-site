@@ -17,6 +17,8 @@ module.exports = {
     },
   },
 
+  trailingSlash: "never",
+
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",

@@ -2,29 +2,34 @@ import React from 'react'
 import { Link } from 'gatsby'
 import * as styles from './pagination.module.scss';
 
-const Pagination = ({ pageContext }) => {
-
-  const { currentPage, numPages } = pageContext
-  const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
-
+const Pagination = ({ 
+  hasPrev,
+  hasNext,
+  prev,
+  next,
+  prevText,
+  nextText,
+  }) => {
   return (
     <div className={styles.paginationContainer}>
-      {!isFirst && (
-        <Link to={`/blog/`+prevPage} rel="prev">
-          ← Previous Page
+      {!hasPrev && (
+        <Link to={`/blog/` + prev} rel="prev">
+          ← {prevText}
         </Link>
       )}
-  
-      {!isLast && (
-        <Link to={`/blog/`+nextPage} rel="next">
-          Next Page →
-      </Link>
+
+      {!hasNext && (
+        <Link to={`/blog/` + next} rel="next">
+          {nextText} →
+        </Link>
       )}
     </div>
   )
+}
+
+Pagination.defaultProps = {
+  prevText: "PREV",
+  nextText: "NEXT",
 }
 
 export default Pagination

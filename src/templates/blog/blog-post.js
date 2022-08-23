@@ -4,13 +4,21 @@ import Layout from '../../components/layout/layout'
 import Sidebar from '../../components/sidebar/sidebar';
 import Main from '../../components/layout/main';
 import BlogPost from '../../components/blog/blog-post';
+import Pagination from '../../components/blog/pagination';
 
 
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, pageContext }) => {
   const frontmatter = data.mdx.frontmatter;
   const body = data.mdx.body;
   const tableOfContents = data.mdx.tableOfContents.items;
+
+  const isFirst = pageContext.prev === null;
+  const isLast = pageContext.next === null;
+  const prevPage = pageContext.prev?.slug
+  const nextPage = pageContext.next?.slug
+  const prevTitle = pageContext.prev?.frontmatter.title
+  const nextTitle = pageContext.next?.frontmatter.title
 
   return (
     <Layout pageTitle={frontmatter.title}>
@@ -19,7 +27,15 @@ const BlogPage = ({ data }) => {
         <BlogPost 
           frontmatter={frontmatter}
           body={body}
-        />         
+        />
+        <Pagination 
+          hasPrev={isFirst} 
+          hasNext={isLast}
+          prev={prevPage}
+          next={nextPage}
+          prevText={prevTitle}
+          nextText={nextTitle}
+        />
       </Main>
     </Layout>
   )

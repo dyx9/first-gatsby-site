@@ -9,16 +9,27 @@ import Pagination from '../../components/blog/pagination';
 
 
 const BlogPage = ({data, pageContext}) => {
+  const { currentPage, numPages } = pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
+  const nextPage = (currentPage + 1).toString()
 
-    return (
-        <Layout pageTitle="Blog">
-          <Sidebar />
-          <Main>
-            <BlogList nodes={data.allMdx.nodes} pageContext={pageContext}/>
-            <Pagination pageContext={pageContext} />
-          </Main>
-        </Layout>
-    )
+
+  return (
+    <Layout pageTitle="Blog">
+      <Sidebar />
+      <Main>
+        <BlogList nodes={data.allMdx.nodes} pageContext={pageContext}/>
+        <Pagination 
+          hasPrev={isFirst} 
+          hasNext={isLast}
+          prev={prevPage}
+          next={nextPage}
+        />
+      </Main>
+    </Layout>
+  )
 }
 
 export const query = graphql`
