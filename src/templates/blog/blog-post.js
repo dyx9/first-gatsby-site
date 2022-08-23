@@ -7,7 +7,7 @@ import BlogPost from '../../components/blog/blog-post';
 import Pagination from '../../components/blog/pagination';
 
 
-const BlogPage = ({ data, pageContext }) => {
+const BlogPostTemplate = ({ data, pageContext }) => {
   const frontmatter = data.mdx.frontmatter;
   const body = data.mdx.body;
   const tableOfContents = data.mdx.tableOfContents.items;
@@ -62,4 +62,4 @@ export const query = graphql`
   }  
 `
 
-export default BlogPage
+export default BlogPostTemplate

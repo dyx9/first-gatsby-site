@@ -7,8 +7,7 @@ import BlogList from '../../components/blog/blog-list';
 import Pagination from '../../components/blog/pagination';
 
 
-
-const BlogPage = ({data, pageContext}) => {
+const BlogListTemplate = ({data, pageContext}) => {
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
@@ -60,5 +59,4 @@ export const query = graphql`
   }  
 `
 
-
-export default BlogPage
+export default BlogListTemplate
