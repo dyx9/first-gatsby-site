@@ -4,14 +4,16 @@ import { Link } from 'gatsby'
 
 const TagsList = ({ nodes }) => {
 
-  console.log("From comp");
-  console.log(nodes);
-
   return (
     <>
       <ul> {
         nodes.map(node => (
-          <p>{node.fieldValue}</p>
+          <li key={node.fieldValue}>
+            <Link
+              to={`/blog/tags/${node.fieldValue}`}>
+                {node.fieldValue}
+            </Link>
+          </li>
         ))
       } </ul>
     </>

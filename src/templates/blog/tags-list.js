@@ -6,10 +6,11 @@ import Main from '../../components/layout/main'
 import TagsList from '../../components/blog/tags-list'
 
 
-const TagsListPage = ({ data }) => {
-  
+const TagsListTemplate = ({ data }) => {
+
+
   const nodes = data.allMdx.group;
-  // nodes.forEach(node => console.log(node.fieldValue))
+  nodes.forEach(node => console.log(node.fieldValue))
 
   return(
     <Layout pageTitle="Tags List">
@@ -31,7 +32,7 @@ export const query = graphql`
         fieldValue
       }
     }
-  }  
+  }
 `
+export default TagsListTemplate
 
-export default TagsListPage

@@ -24,6 +24,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
             }
           }
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
         }
       }
     `
@@ -64,6 +67,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
+
+  // Generate tags-list page
+  createPage({
+    path: `/blog/tags`,
+    component: path.resolve("./src/templates/blog/tags-list.js"),
+  })
+
+  // Generate tags page
+  const tags = result.data.allMdx.group;
+  tags.forEach(tag => {
+    createPage({
+      path: `/blog/tags/${tag.fieldValue}`,
+      component: path.resolve("./src/templates/blog/tags.js"),
+      context: { 
+        currentTag: tag.fieldValue 
+      }
+    })
+  });
 
 }
 
