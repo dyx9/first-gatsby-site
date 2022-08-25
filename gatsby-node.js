@@ -1,4 +1,5 @@
 const path = require("path")
+const _ = require("lodash")
 const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -26,6 +27,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
           group(field: frontmatter___tags) {
             fieldValue
+            totalCount
           }
         }
       }
@@ -78,10 +80,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const tags = result.data.allMdx.group;
   tags.forEach(tag => {
     createPage({
-      path: `/blog/tags/${tag.fieldValue}`,
+      path: `/blog/tags/${_.kebabCase(tag.fieldValue)}`,
       component: path.resolve("./src/templates/blog/tags.js"),
       context: { 
-        currentTag: tag.fieldValue 
+        currentTag: tag.fieldValue,
+        count: tag.totalCount,
       }
     })
   });

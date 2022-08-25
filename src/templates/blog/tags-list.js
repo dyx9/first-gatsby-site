@@ -30,6 +30,7 @@ export const query = graphql`
     allMdx {
       group(field: frontmatter___tags) {
         fieldValue
+        totalCount
       }
     }
   }
