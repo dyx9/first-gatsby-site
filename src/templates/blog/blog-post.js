@@ -47,6 +47,7 @@ export const query = graphql`
       frontmatter {
         date(formatString: "DD MM YYYY")
         date_updated(formatString: "DD MM YYYY")
+        tags
         hero_image {
           childImageSharp {
             gatsbyImageData
