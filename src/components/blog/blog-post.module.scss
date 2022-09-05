@@ -26,6 +26,24 @@ a:visited {
   font-family: $font-family;
 }
 
+.tags {
+  margin: $post-title-margin;
+  font-family: $font-family;
+
+  a {
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    transition: 0.5s;
+  }
+
+  a:hover{
+    background-color: wheat;
+    transition: 0.5s;
+  }
+}
+
 .MDX-body {
   word-break: break-word;
   margin: $post-content-margin;

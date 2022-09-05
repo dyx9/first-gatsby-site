@@ -33,7 +33,7 @@ const BlogPost = ({ frontmatter, body }) => {
 
       { 
         frontmatter.tags && (
-          <span className={styles.date}>
+          <span className={styles.tags}>
             <FiTag />
             {
               frontmatter.tags.map(tag => 
@@ -41,7 +41,7 @@ const BlogPost = ({ frontmatter, body }) => {
                 to={`/blog/tags/${kebabCase(tag)}`}
                 key={tag}
               >
-                {` ${tag} `}
+                {`${tag}`}
               </Link>
               )
             }
@@ -50,11 +50,6 @@ const BlogPost = ({ frontmatter, body }) => {
         )
 
       }
-
-      {/* {
-        Object.entries(frontmatter.tags).map(tag => (<span>{tag[1]}</span>))
-      } */}
-
 
       <div className={styles.MDXBody}>
         <MDXRenderer>
