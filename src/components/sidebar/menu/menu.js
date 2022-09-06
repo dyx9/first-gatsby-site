@@ -18,7 +18,11 @@ const Menu = () => {
   `)
 
   const menuList = data.site.siteMetadata.sidebarMenu;
-  const currentPath = window.location.href;
+  let currentPath;
+
+  if (typeof window !== 'undefined') {
+    currentPath = window.location.href;
+  }
 
   return (
     <>
