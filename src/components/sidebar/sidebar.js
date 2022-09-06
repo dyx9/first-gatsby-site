@@ -3,9 +3,11 @@ import { useState, useRef } from 'react'
 import { Link } from 'gatsby';
 import { MdClose, MdMenu } from 'react-icons/md';
 import * as styles from '../sidebar/sidebar.module.scss'
+import Menu from './menu/menu';
 import SocialLinks from './social-links/social-links';
 import TableOfContents from '../blog/table-of-contents';
 import Footer from './footer/footer';
+
 
 const Sidebar = ({ toc }) => {
 
@@ -40,14 +42,7 @@ const Sidebar = ({ toc }) => {
               </li>
         </ul>
 
-        <ul className={styles.menu}>
-          <li className={styles.logo}> <Link to="/">Yixuan's Website</Link> </li>
-          <li> <Link to="/about">About</Link> </li>
-          <li> <Link to="/blog">Blog</Link> </li>
-          <li> <Link to="/">Contact</Link> </li>
-          <li> <Link to="/">Placeholder</Link> </li>
-          <li> <Link to="/">Placeholder</Link> </li>
-        </ul>
+        <Menu />
 
         <SocialLinks />
 

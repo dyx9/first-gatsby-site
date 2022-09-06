@@ -3,6 +3,12 @@ module.exports = {
     title: `first gatsby site`,
     siteUrl: `https://www.yourdomain.tld`,
     description: `tba`,
+    sidebarMenu: [
+      {url: 'about', label: 'About'},
+      {url: 'blog', label: 'Blog'},
+      {url: 'contact', label: 'Contact'},
+      {url: 'placeholder', label: 'PH'},
+    ],
     footer: {
       powered: `https://www.gatsbyjs.com`,
       inspired: `https://github.com/izackwu/gatsby-starter-breeze`,

@@ -1,0 +1,28 @@
+.menu {
+
+  a {
+    display: block;
+    color: black;
+    padding: 16px;
+    border-right: 2px solid #f1f1f1;
+    transition: .2s;
+  }
+  
+  a.active {
+    // background: linear-gradient(to right, rgba(0, 0, 0, 0), #04AA6D);
+    // color: white;
+    background: rgba(173, 216, 230, 0.3);
+    border-right: 2px solid #04AA6D;
+  
+  }
+  
+  a:hover:not(.active) {
+    background: rgba(173, 216, 230, 0.3);
+  }
+  
+  .logo a {
+    font-size: 32px;
+  }
+
+}
+

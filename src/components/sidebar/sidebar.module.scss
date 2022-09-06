@@ -11,21 +11,6 @@
   user-select: none;
 
 	/* Detailed Rules for Sidebar */
-	a {
-		display: block;
-		color: black;
-		padding: 16px;
-	}
-
-	a.active {
-		background-color: #04AA6D;
-		color: white;
-	}
-
-	a:hover:not(.active) {
-		background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(16, 16, 16));
-		color: white;
-	}
 
 	.interactive-area-1 {
 		max-height: 40%;
@@ -54,10 +39,6 @@
         background-color: $link-colour-visited;
       }
     }
-	}
-
-	.menu .logo a {
-		font-size: 32px;
 	}
 
 }

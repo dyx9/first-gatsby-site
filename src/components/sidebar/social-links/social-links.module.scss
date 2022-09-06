@@ -1,7 +1,9 @@
 @use '../../../sass/variables' as *;
 
 
-.social-link-container 
+.social-link-container {
+
+  margin-top: 16px;
 
   a {
     display: inline;
@@ -14,4 +16,6 @@
     &:hover {
       color: black;
     }
+  }
+
 }
