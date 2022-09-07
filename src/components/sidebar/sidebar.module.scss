@@ -4,7 +4,7 @@
 .sidebar {
   width: 25%;
   height: 100vh;
-  background-color: #f1f1f1;
+  background-color: white;
   display: flex;
   flex-direction: column;
   text-align: right;
@@ -16,7 +16,7 @@
 		position: relative;
 		max-height: 40%;
 		overflow: scroll;
-    margin: auto 0;
+    margin: auto 16px;
 		background: bisque;
 		transform: translateX(-100%);
 

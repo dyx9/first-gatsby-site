@@ -15,13 +15,18 @@ const BlogPost = ({ frontmatter, body }) => {
 
   return (
     <>
-      <a href={frontmatter.hero_image_credit_link} target="_blank" rel="noreferrer">
+      <div className={styles.heroImageContainer}>
         <GatsbyImage
-          className={styles.heroImage}
-          image={getImage(frontmatter.hero_image)}
-          alt={frontmatter.hero_image_alt}
+            className={styles.heroImage}
+            image={getImage(frontmatter.hero_image)}
+            alt={frontmatter.hero_image_alt}
         />
-      </a>
+        <div className={styles.overlay}>
+          <a href={frontmatter.hero_image_credit_link} target="_blank" rel="noreferrer">
+            {frontmatter.hero_image_alt} by: {frontmatter.hero_image_credit_text}
+          </a>
+        </div>
+      </div>
 
       <p className={styles.title}>{frontmatter.title}</p>
       <p className={styles.date}> <BiCalendar /> {frontmatter.date}</p>

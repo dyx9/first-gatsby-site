@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { MdClose, MdMenu } from 'react-icons/md';
 import * as styles from '../sidebar/sidebar.module.scss'
@@ -59,7 +59,7 @@ const Sidebar = ({ toc }) => {
           {toc && <TableOfContents items={toc} />}
         </ul>
 
-        <ul className={styles.sidebarFooter}>
+        <ul>
           <Footer footer={data.site.siteMetadata.footer}/>
         </ul>
       </div>
