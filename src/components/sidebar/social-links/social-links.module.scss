@@ -8,13 +8,15 @@
   a {
     display: inline;
     white-space: nowrap;
+    transition: 0.2s;
+    padding: 16px;
 
     &:visited {
       color: black;
     }
 
     &:hover {
-      color: black;
+      color: $link-colour-visited;
     }
   }
 

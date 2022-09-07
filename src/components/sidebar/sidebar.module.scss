@@ -12,12 +12,27 @@
 
 	/* Detailed Rules for Sidebar */
 
-	.interactive-area-1 {
+	.interactive-area {
+		position: relative;
 		max-height: 40%;
 		overflow: scroll;
-		margin-top: auto;
-    margin-bottom: auto;
-		background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 155, 245));
+    margin: auto 0;
+		background: bisque;
+		transform: translateX(-100%);
+
+		&.active {
+			animation: slide-in 0.5s forwards;
+		}
+
+		@keyframes slide-in {
+			100% { transform: translateX(0%); }
+		}
+
+		@keyframes slide-out {
+			0% { transform: translateX(0%); }
+			100% { transform: translateX(-100%); }
+		}
+
 	}
 
 }

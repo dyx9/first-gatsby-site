@@ -36,46 +36,27 @@ const Sidebar = ({ toc }) => {
     }
   `)
 
-  const [open, setOpen] = useState(false)
-  const sidebarRef = useRef(null)
-
-  const clickHandler = () => {
-    setOpen(!open)
-    updateClassName()
-  }
-
-  const updateClassName = () => {
-    if (sidebarRef.current.className === styles.sidebar) {
-      sidebarRef.current.className += " " + styles.active;
-    }
-    else {
-      sidebarRef.current.className = styles.sidebar;
-    }
-  }
+  const [openSidebar, setOpenSidebar] = useState(false)
+  //const [active, setActive] = useState(false)
 
   return (
     <>
-      {/* <div className={styles.sidebar + (open ? " " + styles.active : "")} > */}
-      <div className={styles.sidebar} ref={sidebarRef}>
+      <div className={openSidebar ? styles.sidebar+' '+styles.active : styles.sidebar} >
 
         {/* mobile header */}
         <ul className={styles.mobileHeader}>
             <li className={styles.logo}> <Link to="/">Yixuan's Website</Link> </li>
-            <li onClick={clickHandler}>
-                {!open &&<a><MdMenu /></a>}
-                {open &&<a><MdClose /></a>}
-              </li>
+            <li onClick={() => setOpenSidebar(!openSidebar)}>
+                {!openSidebar &&<a><MdMenu /></a>}
+                {openSidebar &&<a><MdClose /></a>}
+            </li>
         </ul>
 
         <Menu menu={data.site.siteMetadata.sidebarMenu}/>
         <SocialLinks social={data.site.siteMetadata.social}/>
 
-        <ul className={styles.interactiveArea1}>
-
-          { toc &&
-          <TableOfContents items={toc} />
-          }
-
+        <ul className={toc ? styles.interactiveArea+' '+styles.active : styles.interactiveArea}>
+          {toc && <TableOfContents items={toc} />}
         </ul>
 
         <ul className={styles.sidebarFooter}>
