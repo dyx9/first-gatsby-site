@@ -7,7 +7,7 @@ module.exports = {
       {url: 'about', label: 'About'},
       {url: 'blog', label: 'Blog'},
       {url: 'contact', label: 'Contact'},
-      {url: 'placeholder', label: 'PH'},
+      {url: 'gallery', label: 'Gallery'},
     ],
     footer: {
       powered: `https://www.gatsbyjs.com`,

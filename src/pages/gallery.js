@@ -4,15 +4,15 @@ import Sidebar from '../components/sidebar/sidebar'
 import Main from '../components/layout/main'
 
 
-const Placeholder = () => {
+const Gallery = () => {
   return(
     <Layout pageTitle="Placeholder">
       <Sidebar />
       <Main>
-        <p>Hi, this is the Placeholder page</p>
+        <p>Hi, this is the Gallery page</p>
       </Main>
     </Layout>
   )
 }
 
-export default Placeholder
+export default Gallery

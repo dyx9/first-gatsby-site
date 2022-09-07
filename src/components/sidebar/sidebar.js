@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState, useRef } from 'react'
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { MdClose, MdMenu } from 'react-icons/md';
 import * as styles from '../sidebar/sidebar.module.scss'
 import Menu from './menu/menu';
@@ -10,6 +10,31 @@ import Footer from './footer/footer';
 
 
 const Sidebar = ({ toc }) => {
+
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          sidebarMenu {
+            url
+            label
+          }
+          social {
+            email
+            github
+            linkedin
+            twitter
+            telegram
+          }
+          footer {
+            powered
+            inspired
+            copyright
+          }
+        }
+      }
+    }
+  `)
 
   const [open, setOpen] = useState(false)
   const sidebarRef = useRef(null)
@@ -42,9 +67,8 @@ const Sidebar = ({ toc }) => {
               </li>
         </ul>
 
-        <Menu />
-
-        <SocialLinks />
+        <Menu menu={data.site.siteMetadata.sidebarMenu}/>
+        <SocialLinks social={data.site.siteMetadata.social}/>
 
         <ul className={styles.interactiveArea1}>
 
@@ -55,7 +79,7 @@ const Sidebar = ({ toc }) => {
         </ul>
 
         <ul className={styles.sidebarFooter}>
-          <Footer />
+          <Footer footer={data.site.siteMetadata.footer}/>
         </ul>
       </div>
     </>

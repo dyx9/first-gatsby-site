@@ -7,28 +7,9 @@ import {
 import React from 'react'
 import * as styles from './social-links.module.scss';
 import { TbBrandTelegram } from 'react-icons/tb'
-import { graphql, useStaticQuery } from 'gatsby'
 
 
-const SocialLinks = () => {
-
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          social {
-            email
-            github
-            linkedin
-            twitter
-            telegram
-          }
-        }
-      }
-    }
-  `)
-
-  const links = data.site.siteMetadata.social
+const SocialLinks = ({ social }) => {
 
   const setIcons = (name) => {
     switch (name) {
@@ -50,7 +31,7 @@ const SocialLinks = () => {
   return (
     <div className={styles.socialLinkContainer}>
       {
-        Object.entries(links).map(l => 
+        Object.entries(social).map(l => 
             <a 
               key={l[0]} 
               href={l[1]}

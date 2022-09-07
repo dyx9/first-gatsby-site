@@ -1,5 +1,25 @@
 @use '../../../sass/variables' as *;
 
 .footer-container {
-  margin: 0;
+
+  margin: auto 2em 2em auto;
+
+  p, a {
+    font-size: 0.85rem;
+  }
+  
+  a {
+
+    color: $link-colour-visited;
+
+    &:visited {
+      color: $link-colour-visited;
+    }
+
+
+    &:hover {
+      color: $link-colour-unvisited;
+      text-decoration: underline;
+    }
+  }
 }
