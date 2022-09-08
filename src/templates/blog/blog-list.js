@@ -8,11 +8,11 @@ import Pagination from '../../components/blog/pagination';
 
 
 const BlogListTemplate = ({data, pageContext}) => {
-  const { currentPage, numPages } = pageContext
-  const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
+  const { currentPage, numPages } = pageContext;
+  const hasPrev = currentPage > 1;
+  const hasNext = currentPage < numPages;
+  const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString();
+  const nextPage = (currentPage + 1).toString();
 
 
   return (
@@ -21,8 +21,8 @@ const BlogListTemplate = ({data, pageContext}) => {
       <Main>
         <BlogList nodes={data.allMdx.nodes} pageContext={pageContext}/>
         <Pagination 
-          hasPrev={isFirst} 
-          hasNext={isLast}
+          hasPrev={hasPrev} 
+          hasNext={hasNext}
           prev={prevPage}
           next={nextPage}
         />

@@ -51,13 +51,21 @@ a:visited {
 }
 
 .date {
+  display: inline-flex;
+  align-items: center;
   margin: $post-title-margin;
-  font-family: $font-family;
+
+  .date-text {
+    font-family: $font-family;
+    margin: 0 5px;
+    padding: 5px;
+  }
 }
 
 .tags {
+  display: inline-flex;
+  align-items: center;
   margin: $post-title-margin;
-  font-family: $font-family;
 
   a {
     margin: 0 5px;
@@ -65,6 +73,7 @@ a:visited {
     border-radius: 5px;
     background-color: antiquewhite;
     transition: 0.5s;
+    font-family: $font-family;
   }
 
   a:hover{

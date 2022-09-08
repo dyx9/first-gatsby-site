@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import * as styles from './pagination.module.scss';
 
 const Pagination = ({ 
@@ -12,15 +13,15 @@ const Pagination = ({
   }) => {
   return (
     <div className={styles.paginationContainer}>
-      {!hasPrev && (
+      {hasPrev && (
         <Link to={`/blog/` + prev} rel="prev">
-          ← {prevText}
+          <AiOutlineArrowLeft />{'\u00A0'}{prevText}
         </Link>
       )}
 
-      {!hasNext && (
+      {hasNext && (
         <Link to={`/blog/` + next} rel="next">
-          {nextText} →
+          {nextText}{'\u00A0'}<AiOutlineArrowRight />
         </Link>
       )}
     </div>

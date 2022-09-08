@@ -29,11 +29,20 @@ const BlogPost = ({ frontmatter, body }) => {
       </div>
 
       <p className={styles.title}>{frontmatter.title}</p>
-      <p className={styles.date}> <BiCalendar /> {frontmatter.date}</p>
+
+      <span className={styles.date}> <BiCalendar /> 
+        <p className={styles.dateText}>
+          {frontmatter.date}
+        </p>
+      </span>
       
       { 
         frontmatter.date_updated && 
-        <p className={styles.date}><BiCalendarEdit /> {frontmatter.date_updated}</p>
+        <span className={styles.date}><BiCalendarEdit />
+          <p className={styles.dateText}>
+            {frontmatter.date_updated}
+          </p>
+        </span>
       }
 
       { 

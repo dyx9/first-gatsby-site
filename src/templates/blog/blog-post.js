@@ -12,8 +12,8 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   const body = data.mdx.body;
   const tableOfContents = data.mdx.tableOfContents.items;
 
-  const isFirst = pageContext.prev === null;
-  const isLast = pageContext.next === null;
+  const hasPrev = pageContext.prev !== null;
+  const hasNext = pageContext.next !== null;
   const prevPage = pageContext.prev?.slug
   const nextPage = pageContext.next?.slug
   const prevTitle = pageContext.prev?.frontmatter.title
@@ -28,8 +28,8 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           body={body}
         />
         <Pagination 
-          hasPrev={isFirst} 
-          hasNext={isLast}
+          hasPrev={hasPrev} 
+          hasNext={hasNext}
           prev={prevPage}
           next={nextPage}
           prevText={prevTitle}
