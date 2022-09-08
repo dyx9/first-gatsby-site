@@ -8,16 +8,15 @@ import Pagination from '../../components/blog/pagination';
 
 
 const BlogListTemplate = ({data, pageContext}) => {
-  const { currentPage, numPages } = pageContext;
+  const { currentPage, numPages, tags } = pageContext;
   const hasPrev = currentPage > 1;
   const hasNext = currentPage < numPages;
   const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString();
   const nextPage = (currentPage + 1).toString();
 
-
   return (
     <Layout pageTitle="Blog">
-      <Sidebar />
+      <Sidebar tags={tags}/>
       <Main>
         <BlogList nodes={data.allMdx.nodes} pageContext={pageContext}/>
         <Pagination 
@@ -36,10 +35,12 @@ export const query = graphql`
     allMdx(
       sort: {
         fields: frontmatter___date
-        order: DESC}
-        limit: $limit
-        skip: $skip
-      ) {
+        order: DESC 
+      }
+      limit: $limit
+      skip: $skip
+    ) 
+    {
       nodes {
         frontmatter {
           title
@@ -56,7 +57,7 @@ export const query = graphql`
         slug
       }
     }
-  }  
+  }
 `
 
 export default BlogListTemplate

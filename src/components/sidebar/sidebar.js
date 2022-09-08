@@ -6,10 +6,11 @@ import * as styles from '../sidebar/sidebar.module.scss'
 import Menu from './menu/menu';
 import SocialLinks from './social-links/social-links';
 import TableOfContents from '../blog/table-of-contents';
+import TagsList from '../blog/tags-list';
 import Footer from './footer/footer';
 
 
-const Sidebar = ({ toc }) => {
+const Sidebar = ({ toc, tags }) => {
 
   const data = useStaticQuery(graphql`
     query {
@@ -57,6 +58,10 @@ const Sidebar = ({ toc }) => {
 
         <ul className={toc ? styles.interactiveArea+' '+styles.active : styles.interactiveArea}>
           {toc && <TableOfContents items={toc} />}
+        </ul>
+
+        <ul className={tags ? styles.interactiveArea+' '+styles.active : styles.interactiveArea}>
+          {tags && <TagsList nodes={tags} />}
         </ul>
 
         <ul>

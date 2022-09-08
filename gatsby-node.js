@@ -40,6 +40,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMdx.edges;
+  const tags = result.data.allMdx.group;
 
   // Generate blog-list page with pagination
   const postsPerPage = 2
@@ -53,6 +54,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+        tags,
       },
     })
   })
@@ -77,7 +79,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   // Generate tags page
-  const tags = result.data.allMdx.group;
   tags.forEach(tag => {
     createPage({
       path: `/blog/tags/${_.kebabCase(tag.fieldValue)}`,
