@@ -13,25 +13,25 @@
 	/* Detailed Rules for Sidebar */
 
 	.interactive-area {
-		position: relative;
+		// position: relative;
 		max-height: 40%;
 		overflow: scroll;
     margin: auto 16px;
-		background: bisque;
-		transform: translateX(-100%);
+		background-color: antiquewhite;
+		// transform: translateX(-100%);
 
-		&.active {
-			animation: slide-in 0.5s forwards;
-		}
+		// &.active {
+		// 	animation: slide-in 0.5s forwards;
+		// }
 
-		@keyframes slide-in {
-			100% { transform: translateX(0%); }
-		}
+		// @keyframes slide-in {
+		// 	100% { transform: translateX(0%); }
+		// }
 
-		@keyframes slide-out {
-			0% { transform: translateX(0%); }
-			100% { transform: translateX(-100%); }
-		}
+		// @keyframes slide-out {
+		// 	0% { transform: translateX(0%); }
+		// 	100% { transform: translateX(-100%); }
+		// }
 
 	}
 

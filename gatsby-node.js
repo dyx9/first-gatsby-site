@@ -86,6 +86,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { 
         currentTag: tag.fieldValue,
         count: tag.totalCount,
+        tags,
       }
     })
   });

@@ -56,12 +56,10 @@ const Sidebar = ({ toc, tags }) => {
         <Menu menu={data.site.siteMetadata.sidebarMenu}/>
         <SocialLinks social={data.site.siteMetadata.social}/>
 
-        <ul className={toc ? styles.interactiveArea+' '+styles.active : styles.interactiveArea}>
-          {toc && <TableOfContents items={toc} />}
-        </ul>
-
-        <ul className={tags ? styles.interactiveArea+' '+styles.active : styles.interactiveArea}>
+        {/* <ul className={toc||tags ? styles.interactiveArea+' '+styles.active : styles.interactiveArea}> */}
+        <ul className={styles.interactiveArea}>
           {tags && <TagsList nodes={tags} />}
+          {toc && <TableOfContents items={toc} />}
         </ul>
 
         <ul>

@@ -9,11 +9,11 @@ import BlogList from '../../components/blog/blog-list'
 const TagsTemplate = ({ data, pageContext }) => {
 
   const nodes = data.allMdx.nodes
-  const { currentTag, count } = pageContext
+  const { currentTag, count, tags } = pageContext
 
   return(
     <Layout pageTitle="Tags List">
-      <Sidebar />
+      <Sidebar tags={tags}/>
       <Main>
         <p>Current Tag is: {currentTag}, and there are {count} posts</p>
         <BlogList nodes={nodes} />

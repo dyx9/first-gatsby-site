@@ -1,0 +1,26 @@
+@use '../../sass/variables' as *;
+
+
+.tags-list-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0.2em;
+  text-align: left;
+
+  
+  li {
+    padding: 12px;
+  }
+
+  a {
+    padding: 8px;
+    background-color: bisque;
+    border-radius: 10px;
+    &:hover {
+      background-color: wheat;
+    }
+  }
+
+}
+

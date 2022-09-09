@@ -2,9 +2,19 @@
 
 
 .toc-container {
+  position: relative;
   margin: 0.2em;
   text-align: left;
-  
+
+  animation-name: example;
+  animation-duration: .5s;
+
+
+@keyframes example {
+  0%   {left:-100px;}
+  100% {left:0px;}
+}
+
 
   ol {
     padding-left: 1em;
