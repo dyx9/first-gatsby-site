@@ -6,18 +6,22 @@
   margin: 0.2em;
   text-align: left;
 
-  animation-name: example;
-  animation-duration: .5s;
+  animation-name: slide-left;
+  animation-duration: $universal-hover-time;
 
 
-@keyframes example {
-  0%   {left:-100px;}
-  100% {left:0px;}
-}
+  @keyframes slide-left {
+    0%   {left:-100px;}
+    100% {left:0px;}
+  }
 
 
   ol {
     padding-left: 1em;
+
+    li {
+      margin: 0.3em 0;
+    }
 
     a {
       padding: 0.2em;
@@ -26,6 +30,12 @@
       &:hover {
         transition: $universal-hover-time;
         color: $theme-colour-highlight;
+      }
+
+      &.active {
+        background-color:  $theme-colour-highlight;
+        border-radius: 6px;
+        color: white;
       }
     }
   }
