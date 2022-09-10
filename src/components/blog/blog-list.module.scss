@@ -8,11 +8,15 @@
 /* blog block */
 .blog-block {
   display: flex;
-  padding: 16px;
-  background-color: lightcyan;
-  margin: 0 35px;
-  padding: 30px 0;
+  padding: 32px;
   border-bottom: 1px solid hsla(0,0%,50%,.12);
+  transition: $universal-hover-time;
+
+  &:hover {
+    background-color: $theme-colour;
+    transition: $universal-hover-time;
+
+  }
 
   /* blog content container */
   .non-image-part {
@@ -20,8 +24,35 @@
     width: 70%;
 
     /* blog title */
-    a {
+    .title {
       font-size: 32px;
+      width: fit-content;
+      padding-bottom: 2px;
+      // border-bottom: solid 2px;
+      
+      // &:hover {
+      //   color: $theme-colour-highlight;
+      //   transform: scaleX(0);  
+      //   transition: transform 250ms ease-in-out;
+      //   transform-origin:  0% 50%;
+      // }
+
+      &:after {
+        display:block;
+        content: '';
+        padding-bottom: 2px;
+        border-bottom: solid 3px $theme-colour-highlight;  
+        transform: scaleX(0);  
+        transition: transform 250ms ease-in-out;
+      }
+
+      &:hover:after {
+         transform: scaleX(1); 
+      }
+      
+      &:after{
+        transform-origin:  0% 50%;
+      }
     }
 
     /* blog time */

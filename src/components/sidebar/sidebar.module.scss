@@ -17,7 +17,8 @@
 		max-height: 40%;
 		overflow: scroll;
     margin: auto 16px;
-		background-color: antiquewhite;
+		background-color: $theme-colour;
+		border-radius: 10px;
 		// transform: translateX(-100%);
 
 		// &.active {

@@ -71,13 +71,13 @@ a:visited {
     margin: 0 5px;
     padding: 5px;
     border-radius: 5px;
-    background-color: antiquewhite;
+    background-color: $theme-colour;
     transition: 0.5s;
     font-family: $font-family;
   }
 
   a:hover{
-    background-color: wheat;
+    color: $theme-colour-highlight;
     transition: 0.5s;
   }
 }

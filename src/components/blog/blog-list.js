@@ -8,15 +8,15 @@ const BlogList = ({ nodes }) => {
 
   return (
     <>
-      <ul> {
+      {
         nodes.map(node => (
-          <li key={node.id} className={styles.blogBlock}>
+          <Link 
+            key={node.id} 
+            className={styles.blogBlock}
+            to={`/blog/${node.slug}`}
+          >
             <div className={styles.nonImagePart}>
-                <Link 
-                  className={styles.postLink} 
-                  to={`/blog/${node.slug}`}> 
-                  {node.frontmatter.title} 
-                </Link>
+                <p className={styles.title}>{node.frontmatter.title}</p>
                 <p className={styles.postBrief}>
                   {node.frontmatter.description}
                 </p>
@@ -30,9 +30,9 @@ const BlogList = ({ nodes }) => {
                   alt={node.frontmatter.hero_image_alt}
                 />
             </div>
-          </li>
+          </Link>
         ))
-      } </ul>
+      }
     </>
   )
 }

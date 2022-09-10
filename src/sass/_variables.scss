@@ -3,6 +3,14 @@ $header-height: 60px;
 
 $mobile-device-max-width: 960px;
 
+// colour palette
+$theme-colour: rgba(173, 230, 204, 0.3);
+$theme-colour-highlight: #2A9D8F;
+$interactive-area-colour: rgba(217, 218, 217, 0.3);
+
+// animation
+$universal-hover-time: 0.5s;
+
 // speccification for posts
 $font-family: Georgia, 'Times New Roman', Times, serif;
 $post-title-font-size: 3rem;
@@ -28,8 +36,8 @@ $h4-margin: 10px 0 5px 0;
 $post-contnet-list-style: initial;
 $post-contnet-list-margin: 0 10px 5px 10px;
 
-$link-colour-unvisited: cornflowerblue;
-$link-colour-visited: cornflowerblue;
+$link-colour-unvisited: $theme-colour-highlight;
+$link-colour-visited: $theme-colour-highlight;
 
 $code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $code-bg-colour: rgb(251,242,233);

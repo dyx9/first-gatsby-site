@@ -1,3 +1,5 @@
+@use '../../../sass/variables' as *;
+
 .menu {
 
   a {
@@ -11,13 +13,13 @@
   a.active {
     // background: linear-gradient(to right, rgba(0, 0, 0, 0), #04AA6D);
     // color: white;
-    background: rgba(173, 230, 204, 0.3);
-    border-right: 4px solid #02df8e;
+    background: $theme-colour;
+    border-right: 4px solid $theme-colour-highlight;
   
   }
   
   a:hover:not(.active) {
-    background: rgba(173, 230, 204, 0.3);
+    background: $theme-colour;
   }
   
   .logo a {
