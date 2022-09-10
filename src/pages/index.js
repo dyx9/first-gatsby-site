@@ -8,8 +8,6 @@ import Main from '../components/layout/main'
 
 const IndexPage = ({ data }) => {
 
-  console.log(data);
-
   return (
     <Layout pageTitle="Home Page">
       <Sidebar />

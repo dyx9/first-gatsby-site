@@ -8,9 +8,7 @@ import TagsList from '../../components/blog/tags-list'
 
 const TagsListTemplate = ({ data }) => {
 
-
   const nodes = data.allMdx.group;
-  nodes.forEach(node => console.log(node.fieldValue))
 
   return(
     <Layout pageTitle="Tags List">

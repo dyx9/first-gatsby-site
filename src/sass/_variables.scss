@@ -1,12 +1,15 @@
 $sidebar-width: 100%;
 $header-height: 60px;
+$page-padding-top: 1em;
+$page-padding-bottom: 2em;
 
 $mobile-device-max-width: 960px;
 
 // colour palette
 $theme-colour: rgba(173, 230, 204, 0.3);
 $theme-colour-highlight: #2A9D8F;
-$interactive-area-colour: rgba(217, 218, 217, 0.3);
+$link-colour-unvisited: $theme-colour-highlight;
+$link-colour-visited: $theme-colour-highlight;
 
 // animation
 $universal-hover-time: 0.5s;
@@ -35,9 +38,6 @@ $h4-margin: 10px 0 5px 0;
 
 $post-contnet-list-style: initial;
 $post-contnet-list-margin: 0 10px 5px 10px;
-
-$link-colour-unvisited: $theme-colour-highlight;
-$link-colour-visited: $theme-colour-highlight;
 
 $code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $code-bg-colour: rgb(251,242,233);

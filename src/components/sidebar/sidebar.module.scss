@@ -4,6 +4,8 @@
 .sidebar {
   width: 25%;
   height: 100vh;
+	padding-top: $page-padding-top;
+	padding-bottom: $page-padding-bottom;
   background-color: white;
   display: flex;
   flex-direction: column;

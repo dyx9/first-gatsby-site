@@ -26,5 +26,10 @@
     font-size: 32px;
   }
 
+  .logo-active {
+    font-size: 32px;
+    border-right: 4px solid $theme-colour-highlight;
+  }
+
 }
 
