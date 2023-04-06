@@ -5,6 +5,8 @@ import Sidebar from '../../components/sidebar/sidebar';
 import Main from '../../components/layout/main';
 import BlogPost from '../../components/blog/blog-post';
 import Pagination from '../../components/blog/pagination';
+import MyDisqus from '../../components/blog/disqus';
+
 
 
 const BlogPostTemplate = ({ data, pageContext }) => {
@@ -35,6 +37,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           prevText={prevTitle}
           nextText={nextTitle}
         />
+        <MyDisqus pageContext={pageContext} frontmatter={frontmatter}/>
       </Main>
     </Layout>
   )
