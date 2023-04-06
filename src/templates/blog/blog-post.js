@@ -5,6 +5,7 @@ import Sidebar from '../../components/sidebar/sidebar';
 import Main from '../../components/layout/main';
 import BlogPost from '../../components/blog/blog-post';
 import Pagination from '../../components/blog/pagination';
+import { Disqus } from 'gatsby-plugin-disqus';
 
 
 const BlogPostTemplate = ({ data, pageContext }) => {
@@ -18,6 +19,14 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   const nextPage = pageContext.next?.slug
   const prevTitle = pageContext.prev?.frontmatter.title
   const nextTitle = pageContext.next?.frontmatter.title
+
+  const disqusConfig = {
+    url: `https://dyx.gatsbyjs.io/blog/${pageContext.slug}`,
+    identifier: pageContext.slug,
+    title: frontmatter.title,
+  }
+
+  console.log(disqusConfig);
 
   return (
     <Layout pageTitle={frontmatter.title}>
@@ -35,6 +44,8 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           prevText={prevTitle}
           nextText={nextTitle}
         />
+
+        <Disqus config={disqusConfig} />
       </Main>
     </Layout>
   )

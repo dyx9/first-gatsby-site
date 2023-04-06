@@ -56,5 +56,27 @@ module.exports = {
       },
     },
 
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+          shortname: `test-xkknkcsy8b`
+      }
+  },
+
+    // {
+    //   resolve: `gatsby-plugin-gitalk`,
+    //   options: {
+    //     config: {
+    //       clientID: '53bcef2583830fdaf1eb',
+    //       clientSecret: '269c485c8a91a27c66d6e4847381a43ba0aa162e',
+    //       repo: 'first-gatsby-site',
+    //       owner: 'dyx9',
+    //       admin: ['dyx9'],
+    //       createIssueManually: true,
+    //       distractionFreeMode: false
+    //     }
+    //   }
+    // },
+
   ],
 }
