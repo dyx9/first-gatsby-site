@@ -20,4 +20,3 @@ const MyDisqus = ({ pageContext, frontmatter }) => {
 }
 
 export default MyDisqus
-
