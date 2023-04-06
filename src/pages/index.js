@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
         <p>I'm making this by following the Gatsby Tutorial.</p>
         <StaticImage
           alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
-          src="https://www.apple.com.cn/iphone-13-pro/images/meta/wechat/iphone-13-pro_overview__b1vk24cp916q_og.png"
+          src="https://images.unsplash.com/photo-1571988840298-3b5301d5109b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3087&q=80"
         />
       </Main>
     </Layout>

@@ -45,14 +45,6 @@
         transform: scaleX(0);  
         transition: transform 250ms ease-in-out;
       }
-
-      &:hover:after {
-         transform: scaleX(1); 
-      }
-      
-      &:after{
-        transform-origin:  0% 50%;
-      }
     }
 
     /* blog time */
@@ -72,6 +64,15 @@
       height: 150px;
       object-fit: cover;
     }
+  }
+
+  // hover the block to highlight the title
+  &:hover .title:after {
+    transform: scaleX(1); 
+  }
+  
+  & .title:after {
+    transform-origin:  0% 50%;
   }
 }
 
