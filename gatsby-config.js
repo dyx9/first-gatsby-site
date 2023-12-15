@@ -6,8 +6,8 @@ module.exports = {
     sidebarMenu: [
       {url: 'about', label: 'About'},
       {url: 'blog', label: 'Blog'},
+      {url: 'portfolio', label: 'Portfolio'},
       {url: 'contact', label: 'Contact'},
-      {url: 'gallery', label: 'Gallery'},
     ],
     footer: {
       powered: `https://www.gatsbyjs.com`,
@@ -36,6 +36,14 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/blog`,
+      }
+    },
+
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `portfolio`,
+        path: `${__dirname}/portfolio`,
       }
     },
     
