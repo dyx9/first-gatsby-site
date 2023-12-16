@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import * as styles from './blog-list.module.scss';
+import * as styles from './portfolio-list.module.scss';
 
 
-const BlogList = ({ nodes }) => {
+const PortfolioList = ({ nodes }) => {
 
   return (
     <>
@@ -37,4 +37,4 @@ const BlogList = ({ nodes }) => {
   )
 }
 
-export default BlogList
+export default PortfolioList

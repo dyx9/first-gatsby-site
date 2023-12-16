@@ -3,8 +3,7 @@ import Layout from '../../components/layout/layout'
 import Sidebar from '../../components/sidebar/sidebar'
 import Main from '../../components/layout/main'
 import { graphql } from 'gatsby'
-import BlogList from '../../components/blog/blog-list'
-
+import PortfolioList from '../../components/portfolio/portfolio-list'
 
 const PortfolioPage = ({ data }) => {
   return(
@@ -13,7 +12,7 @@ const PortfolioPage = ({ data }) => {
       <Main>
         <p>Hi, this is the Portfolio page</p>
 
-        <BlogList dir = {'portfolio'} nodes = {data.allMdx.nodes} />
+        <PortfolioList nodes = {data.allMdx.nodes} />
       </Main>
     </Layout>
   )

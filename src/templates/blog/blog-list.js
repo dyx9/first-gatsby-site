@@ -18,7 +18,7 @@ const BlogListTemplate = ({data, pageContext}) => {
     <Layout pageTitle="Blog">
       <Sidebar tags={tags}/>
       <Main>
-        <BlogList dir = {'blog'} nodes={data.allMdx.nodes} pageContext={pageContext}/>
+        <BlogList nodes={data.allMdx.nodes} pageContext={pageContext}/>
         <Pagination 
           hasPrev={hasPrev} 
           hasNext={hasNext}
