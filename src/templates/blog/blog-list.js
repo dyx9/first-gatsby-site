@@ -18,7 +18,7 @@ const BlogListTemplate = ({data, pageContext}) => {
     <Layout pageTitle="Blog">
       <Sidebar tags={tags}/>
       <Main>
-        <BlogList nodes={data.allMdx.nodes} pageContext={pageContext}/>
+        <BlogList dir = {'blog'} nodes={data.allMdx.nodes} pageContext={pageContext}/>
         <Pagination 
           hasPrev={hasPrev} 
           hasNext={hasNext}
@@ -39,6 +39,7 @@ export const query = graphql`
       }
       limit: $limit
       skip: $skip
+      filter: {fileAbsolutePath: {regex: "/blog/"}}
     ) 
     {
       nodes {

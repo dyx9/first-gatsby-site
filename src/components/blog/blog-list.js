@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from './blog-list.module.scss';
 
 
-const BlogList = ({ nodes }) => {
+const BlogList = ({ dir, nodes }) => {
 
   return (
     <>
@@ -13,7 +13,7 @@ const BlogList = ({ nodes }) => {
           <Link 
             key={node.id} 
             className={styles.blogBlock}
-            to={`/blog/${node.slug}`}
+            to={`/${dir}/${node.slug}`}
           >
             <div className={styles.nonImagePart}>
                 <p className={styles.title}>{node.frontmatter.title}</p>
