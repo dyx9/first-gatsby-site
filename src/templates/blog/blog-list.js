@@ -39,6 +39,7 @@ export const query = graphql`
       }
       limit: $limit
       skip: $skip
+      filter: {fileAbsolutePath: {regex: "/blog/"}}
     ) 
     {
       nodes {
