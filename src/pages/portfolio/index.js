@@ -5,7 +5,7 @@ import Main from '../../components/layout/main'
 import { graphql } from 'gatsby'
 import PortfolioList from '../../components/portfolio/portfolio-list'
 
-const PortfolioPage = ({ data }) => {
+const PortfolioListPage = ({ data }) => {
   return(
     <Layout pageTitle="Portfolio">
       <Sidebar />
@@ -18,7 +18,7 @@ const PortfolioPage = ({ data }) => {
   )
 }
 
-export default PortfolioPage
+export default PortfolioListPage
 
 export const query = graphql`
   query {
@@ -39,6 +39,7 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData
             }
+            publicURL
           }
           hero_image_alt
         }
