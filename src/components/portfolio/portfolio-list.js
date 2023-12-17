@@ -15,12 +15,12 @@ const PortfolioList = ({ nodes }) => {
             key={node.id} 
             className={styles.portfolioItem} 
             to={`${node.slug}`} 
-            // style={{ backgroundImage: 'url(' + node.frontmatter.hero_image.publicURL + ')' }}
           >
-
-            <div className={styles.backgroundImageContainer} style={{ backgroundImage: `url(${node.frontmatter.hero_image.publicURL})` }}>
-              {/* Background image container */}
-            </div>
+            <GatsbyImage 
+              className={styles.backgroundImageContainer}
+              image={getImage(node.frontmatter.hero_image)}
+              alt={node.frontmatter.hero_image_alt}
+            />
 
             <div className={styles.portfolioInfo}>
               <p className={styles.title}>{node.frontmatter.title}</p>
