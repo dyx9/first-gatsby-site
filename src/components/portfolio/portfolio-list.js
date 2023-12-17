@@ -5,7 +5,6 @@ import * as styles from './portfolio-list.module.scss';
 
 
 const PortfolioList = ({ nodes }) => {
-  nodes.map((node) => console.log(node.frontmatter.hero_image.absolutePath))
 
   return (
     <div className={styles.portfolioBlock}>
@@ -22,27 +21,19 @@ const PortfolioList = ({ nodes }) => {
               alt={node.frontmatter.hero_image_alt}
             />
 
-            <div className={styles.portfolioInfo}>
-              <p className={styles.title}>{node.frontmatter.title}</p>
-              <p className={styles.postBrief}>{node.frontmatter.description}</p>
+            <div className={styles.overlay}>
+              <p className={styles.portfolioTitle}>{node.frontmatter.title}</p>
+              <div className={styles.portfolioInfo}>
+                <p>{node.frontmatter.description}</p>
+                {node.frontmatter.tags.map(tag => {
+                  return <span className={styles.tags}>{tag}</span>
+                })}
+                
+              </div>
             </div>
+            
+
           </Link>
-          //           <Link key={node.id} className={styles.portfolioItem} to={`${node.slug}`}>
-          //     <div className={styles.imagePart}>
-          //         <GatsbyImage 
-          //           className={styles.img}
-          //           image={getImage(node.frontmatter.hero_image)}
-          //           alt={node.frontmatter.hero_image_alt}
-          //         />
-          //     </div>
-          //     <div className={styles.portfolioInfo}>
-          //         <p className={styles.title}>{node.frontmatter.title}</p>
-          //         <p className={styles.postBrief}>
-          //           {node.frontmatter.description}
-          //         </p>
-          //         {/* <p className={styles.postTime}>Posted: {node.frontmatter.date}</p> */}
-          //     </div>
-          // </Link>
         ))
       }
     </div>

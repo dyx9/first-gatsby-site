@@ -39,9 +39,9 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData
             }
-            publicURL
           }
           hero_image_alt
+          tags
         }
         id
         slug
