@@ -39,9 +39,12 @@ a:visited {
 
 
 
+.title-wrapper {
+  margin: $post-title-margin;
+}
+
 .title {
   font-size: $post-title-font-size;
-  margin: $post-title-margin;
   font-family: $font-family;
 
   @media only screen and (max-width: $mobile-device-max-width) {
@@ -147,6 +150,8 @@ a:visited {
 
   p, ul, ol, li {
     font-size: $post-content-font-size;
+    margin-left: 1em;
+    margin-right: 0.5em;
   }
 
   pre {

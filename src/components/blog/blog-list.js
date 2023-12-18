@@ -13,7 +13,7 @@ const BlogList = ({ nodes }) => {
           <Link 
             key={node.id} 
             className={styles.blogBlock}
-            to={`${node.slug}`}
+            to={`/blog/${node.slug}`}
           >
             <div className={styles.nonImagePart}>
                 <p className={styles.title}>{node.frontmatter.title}</p>
