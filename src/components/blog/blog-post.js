@@ -7,6 +7,8 @@ import { FiTag } from 'react-icons/fi'
 import { BiCalendar, BiCalendarEdit } from 'react-icons/bi'
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 import * as styles from './blog-post.module.scss';
+import { motion } from 'framer-motion'
+import AnimatedText from './animated-text';
 
 
 const BlogPost = ({ frontmatter, body }) => {
@@ -28,26 +30,41 @@ const BlogPost = ({ frontmatter, body }) => {
         </div>
       </div>
 
-      <p className={styles.title}>{frontmatter.title}</p>
+      <div className = {styles.titleWrapper}>
+        <AnimatedText text={frontmatter.title} />
+      </div>
 
-      <span className={styles.date}> <BiCalendar /> 
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay:1}}
+
+        className={styles.date}> <BiCalendar /> 
         <p className={styles.dateText}>
           {frontmatter.date}
         </p>
-      </span>
+      </motion.span>
       
       { 
         frontmatter.date_updated && 
-        <span className={styles.date}><BiCalendarEdit />
+        <motion.span 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay:1}}
+          className={styles.date}> <BiCalendarEdit />
           <p className={styles.dateText}>
             {frontmatter.date_updated}
           </p>
-        </span>
+        </motion.span>
       }
 
       { 
         frontmatter.tags && (
-          <span className={styles.tags}>
+          <motion.span 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay:1}}
+            className={styles.tags}>
             <FiTag />
             {
               frontmatter.tags.map(tag => 
@@ -59,17 +76,21 @@ const BlogPost = ({ frontmatter, body }) => {
               </Link>
               )
             }
-          </span>
+          </motion.span>
 
         )
 
       }
 
-      <div className={styles.MDXBody}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay:1.5}}
+        className={styles.MDXBody}>
         <MDXRenderer>
           {body}
         </MDXRenderer>
-      </div>
+      </motion.div>
     </>
 
   )

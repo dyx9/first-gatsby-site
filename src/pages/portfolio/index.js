@@ -10,7 +10,6 @@ const PortfolioListPage = ({ data }) => {
     <Layout pageTitle="Portfolio">
       <Sidebar />
       <Main>
-        <p>Hi, this is the Portfolio page</p>
 
         <PortfolioList nodes = {data.allMdx.nodes} />
       </Main>

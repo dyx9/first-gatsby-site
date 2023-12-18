@@ -13,7 +13,7 @@ const PortfolioList = ({ nodes }) => {
           <Link 
             key={node.id} 
             className={styles.portfolioItem} 
-            to={`${node.slug}`} 
+            to={`/portfolio/${node.slug}`} 
           >
             <GatsbyImage 
               className={styles.backgroundImageContainer}
