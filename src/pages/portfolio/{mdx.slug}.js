@@ -14,7 +14,8 @@ const PortfolioPage = ({ data }) => {
     <Layout pageTitle={frontmatter.title}>
       <Sidebar toc={tableOfContents}/>
       <Main>
-        <BlogPost 
+        <BlogPost
+          page={'portfolio'}
           frontmatter={frontmatter}
           body={body}
         />

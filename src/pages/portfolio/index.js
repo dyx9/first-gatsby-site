@@ -8,9 +8,8 @@ import PortfolioList from '../../components/portfolio/portfolio-list'
 const PortfolioListPage = ({ data }) => {
   return(
     <Layout pageTitle="Portfolio">
-      <Sidebar />
+      <Sidebar page={"portfolio"} tags={data.allMdx.group} />
       <Main>
-
         <PortfolioList nodes = {data.allMdx.nodes} />
       </Main>
     </Layout>
@@ -27,8 +26,7 @@ export const query = graphql`
         order: DESC 
       }
       filter: {fileAbsolutePath: {regex: "/portfolio/"}}
-    ) 
-    {
+    ) {
       nodes {
         frontmatter {
           title
@@ -44,6 +42,10 @@ export const query = graphql`
         }
         id
         slug
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }
