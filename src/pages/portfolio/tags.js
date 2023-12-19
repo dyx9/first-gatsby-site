@@ -3,28 +3,29 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layout/layout'
 import Sidebar from '../../components/sidebar/sidebar'
 import Main from '../../components/layout/main'
-import BlogList from '../../components/blog/blog-list'
+import PortfolioList from '../../components/portfolio/portfolio-list'
 
+const PortfolioTagsPage = ({ data, pageContext }) => {
 
-const TagsTemplate = ({ data, pageContext }) => {
-
-  const nodes = data.allMdx.nodes
-  const { tags } = pageContext
+    const nodes = data.allMdx.nodes
+    const { tags } = pageContext
 
   return(
-    <Layout pageTitle="Blog Tags List">
-      <Sidebar page={'blog'} tags={tags}/>
+    <Layout pageTitle="Portfolio Tag List">
+      <Sidebar page={'portfolio'} tags={tags} />
       <Main>
-        <BlogList nodes={nodes} />
+        <PortfolioList nodes = {nodes} />
       </Main>
     </Layout>
   )
 }
 
+export default PortfolioTagsPage
+
 export const query = graphql`
-  query ($currentTag: [String]) {
+query ($currentTag: [String]) {
     allMdx(
-      filter: {frontmatter: {tags: {in: $currentTag}}, fileAbsolutePath: {regex: "/blog/"}}
+    filter: {frontmatter: {tags: {in: $currentTag}}, fileAbsolutePath: {regex: "/portfolio/"}}
       sort: {fields: frontmatter___date, order: DESC}
     ) {
       nodes {
@@ -40,10 +41,9 @@ export const query = graphql`
             }
           }
           hero_image_alt
+          tags
         }
       }
     }
   }
 `
-export default TagsTemplate
-

@@ -10,7 +10,7 @@ import TagsList from '../blog/tags-list';
 import Footer from './footer/footer';
 
 
-const Sidebar = ({ toc, tags }) => {
+const Sidebar = ({ page, toc, tags }) => {
 
   const data = useStaticQuery(graphql`
     query {
@@ -64,7 +64,7 @@ const Sidebar = ({ toc, tags }) => {
 
         {/* <ul className={toc||tags ? styles.interactiveArea+' '+styles.active : styles.interactiveArea}> */}
         <ul className={styles.interactiveArea}>
-          {tags && <TagsList nodes={tags} />}
+          {tags && <TagsList page={page} nodes={tags} />}
           {toc && <TableOfContents items={toc} />}
         </ul>
 

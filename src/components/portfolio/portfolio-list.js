@@ -26,7 +26,7 @@ const PortfolioList = ({ nodes }) => {
               <div className={styles.portfolioInfo}>
                 <p>{node.frontmatter.description}</p>
                 {node.frontmatter.tags.map(tag => {
-                  return <span className={styles.tags}>{tag}</span>
+                  return <span key={tag} className={styles.tags}>{tag}</span>
                 })}
                 
               </div>

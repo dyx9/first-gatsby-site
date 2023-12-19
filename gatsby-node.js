@@ -4,10 +4,10 @@ const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  const result = await graphql(
+  const postResult = await graphql(
     `
       {
-        allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 2000) {
+        allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 2000, filter: {fileAbsolutePath: {regex: "/blog/"}}) {
           edges {
             node {
               slug
@@ -34,13 +34,45 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
   )
 
-  if (result.errors) {
+  const portfolioResult = await graphql(
+    `
+      {
+        allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 2000, filter: {fileAbsolutePath: {regex: "/portfolio/"}}) {
+          edges {
+            node {
+              slug
+            }
+            next {
+              slug
+              frontmatter {
+                title
+              }
+            }
+            previous {
+              slug
+              frontmatter {
+                title
+              }
+            }
+          }
+          group(field: frontmatter___tags) {
+            fieldValue
+            totalCount
+          }
+        }
+      }
+    `
+  )
+
+  if (postResult.errors || portfolioResult.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
-  const posts = result.data.allMdx.edges;
-  const tags = result.data.allMdx.group;
+  const posts = postResult.data.allMdx.edges;
+  const postTags = postResult.data.allMdx.group;
+
+  const portfolioTags = portfolioResult.data.allMdx.group;
 
   // Generate blog-list page with pagination
   const postsPerPage = 4
@@ -54,7 +86,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
-        tags,
+        tags: postTags,
       },
     })
   })
@@ -72,21 +104,34 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  // Generate tags-list page
+  // Generate post tags-list page
   createPage({
     path: `/blog/tags`,
     component: path.resolve("./src/templates/blog/tags-list.js"),
   })
 
-  // Generate tags page
-  tags.forEach(tag => {
+  // Generate post tags page
+  postTags.forEach(tag => {
     createPage({
       path: `/blog/tags/${_.kebabCase(tag.fieldValue)}`,
       component: path.resolve("./src/templates/blog/tags.js"),
       context: { 
         currentTag: tag.fieldValue,
         count: tag.totalCount,
-        tags,
+        tags: postTags,
+      }
+    })
+  });
+
+  // Generate portfolio tags page
+  portfolioTags.forEach(tag => {
+    createPage({
+      path: `/portfolio/tags/${_.kebabCase(tag.fieldValue)}`,
+      component: path.resolve("./src/pages/portfolio/tags.js"),
+      context: { 
+        currentTag: tag.fieldValue,
+        count: tag.totalCount,
+        tags: portfolioTags
       }
     })
   });

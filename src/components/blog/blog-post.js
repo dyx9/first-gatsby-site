@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 import AnimatedText from './animated-text';
 
 
-const BlogPost = ({ frontmatter, body }) => {
+const BlogPost = ({ page, frontmatter, body }) => {
 
   deckDeckGoHighlightElement();
 
@@ -69,7 +69,7 @@ const BlogPost = ({ frontmatter, body }) => {
             {
               frontmatter.tags.map(tag => 
               <Link
-                to={`/blog/tags/${kebabCase(tag)}`}
+                to={`/${page}/tags/${kebabCase(tag)}`}
                 key={tag}
               >
                 {`${tag}`}

@@ -6,7 +6,7 @@ import { BsDot } from 'react-icons/bs'
 import * as styles from './tags-list.module.scss';
 
 
-const TagsList = ({ nodes }) => {
+const TagsList = ({ page, nodes }) => {
 
   let currentPath = '';
   if (typeof window !== 'undefined') {
@@ -19,8 +19,16 @@ const TagsList = ({ nodes }) => {
         nodes.map(node => (
           <li key={node.fieldValue}>
             <Link
-              className={currentPath.includes(kebabCase(node.fieldValue)) ? styles.active : undefined}
-              to={`/blog/tags/${kebabCase(node.fieldValue)}`}>
+              className={
+                currentPath.includes(kebabCase(node.fieldValue)) ? styles.active : undefined}
+              to={
+                // if any tag is selected
+                currentPath.includes(kebabCase(node.fieldValue)) ?
+                // link to parent directory (deselect tag)
+                `/${page}` :
+                // ink to the tag
+                `/${page}/tags/${kebabCase(node.fieldValue)}`
+                }>
                 <FiTag /> {'\u00A0'} {node.fieldValue} <BsDot /> {node.totalCount}
             </Link>
           </li>

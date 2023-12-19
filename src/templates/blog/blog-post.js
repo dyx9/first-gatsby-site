@@ -26,6 +26,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       <Sidebar toc={tableOfContents}/>
       <Main>
         <BlogPost 
+          page = {'blog'}
           frontmatter={frontmatter}
           body={body}
         />
