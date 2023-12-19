@@ -68,21 +68,22 @@
 
 
 .mobile-header {
-	.logo a{
-		font-size: 2em;
-	}
 	display: none;
+	background-color: rgba(190, 215, 205, 0.95);
+	.logo a{
+		font-size: 1.5em;
+	}
 
 	.nav-button {
 		border: none;
 		height: $header-height;
 		width: $header-height;
+		background-color: transparent;
 	}
 
 	/* Responsive Design for Mobile */
 	@media only screen and (max-width: $mobile-device-max-width) {
 		padding: 0 2% 0 2%;
-		background-color: #f1f1f1;
 		position: fixed;
 		top: 0;
 		left: 0;
