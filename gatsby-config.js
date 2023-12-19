@@ -30,7 +30,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     `gatsby-plugin-sass`,
-    `gatsby-plugin-remove-trailing-slashes`,
     
     {
       resolve: "gatsby-source-filesystem",

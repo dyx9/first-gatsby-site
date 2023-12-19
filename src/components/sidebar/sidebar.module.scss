@@ -2,15 +2,15 @@
 
 
 .sidebar {
-  width: 25%;
-  height: 100vh;
+	width: 25%;
+	height: 100vh;
 	padding-top: $page-padding-top;
 	padding-bottom: $page-padding-bottom;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  user-select: none;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	user-select: none;
 
 	/* Detailed Rules for Sidebar */
 
@@ -18,7 +18,7 @@
 		// position: relative;
 		max-height: 40%;
 		overflow: scroll;
-    margin: auto 16px;
+    	margin: auto 16px;
 		background-color: $theme-colour;
 		border-radius: 10px;
 		// transform: translateX(-100%);
@@ -42,46 +42,55 @@
 
 
 @media only screen and (max-width: $mobile-device-max-width) {
-	.sidebar {
-		padding-top: $header-height;
-		position: fixed;
-		left: calc($sidebar-width * -1);
-		transition: .5s;
-		z-index: 999;
-		height: 100%;
-		// background-color:rgba(221, 221, 221, 0.8);
-		
-		background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgb(255, 255, 255));
+    .sidebar {
+        padding-top: $header-height;
+        position: fixed;
+        top: calc(100vh * -1); /* Adjust this value based on your sidebar's height */
+        transition: .5s;
+        z-index: 999;
+        height: 100vh; /* Define your sidebar's height */
+        width: 100%; /* Full width */
+		background-color: rgba(255, 255, 255, 0.95);
+        // background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgb(255, 255, 255));
 
-  
-		&.active {
-			display: flex;
-			left: calc(100% - $sidebar-width);
-			width: $sidebar-width;
-			transition: 0.5s;
-		}
+        &.active {
+            display: flex;
+            top: 0; /* Adjust if you want the sidebar to start sliding down from a different position */
+            transition: 0.5s;
+        }
 
-		& > .menu > .logo{
-			display: none;
-		}
-	}
+        & > .menu > .logo{
+            display: none;
+        }
+    }
 }
 
 
+
 .mobile-header {
+	.logo a{
+		font-size: 2em;
+	}
 	display: none;
+
+	.nav-button {
+		border: none;
+		height: $header-height;
+		width: $header-height;
+	}
 
 	/* Responsive Design for Mobile */
 	@media only screen and (max-width: $mobile-device-max-width) {
-    background-color: #f1f1f1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: $header-height;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 999;
+		padding: 0 2% 0 2%;
+		background-color: #f1f1f1;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: $header-height;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		z-index: 999;
 	}
 }
