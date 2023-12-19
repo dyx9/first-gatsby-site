@@ -43,7 +43,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const tags = result.data.allMdx.group;
 
   // Generate blog-list page with pagination
-  const postsPerPage = 2
+  const postsPerPage = 4
   const numPages = Math.ceil(posts.length / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({

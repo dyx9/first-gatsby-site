@@ -47,10 +47,16 @@ const Sidebar = ({ toc, tags }) => {
         {/* mobile header */}
         <ul className={styles.mobileHeader}>
             <li className={styles.logo}> <Link to="/">Yixuan's Website</Link> </li>
-            <a href='#' onClick={() => setOpenSidebar(!openSidebar)} onKeyDown={() => setOpenSidebar(!openSidebar)}>
+            {/* <a href='#' onClick={() => setOpenSidebar(!openSidebar)} onKeyDown={() => setOpenSidebar(!openSidebar)}>
                 {!openSidebar && <MdMenu />}
                 {openSidebar && <MdClose />}
-            </a>
+            </a> */}
+            <button className={styles.navButton}
+              onClick={() => setOpenSidebar(!openSidebar)} onKeyDown={() => setOpenSidebar(!openSidebar)}
+            >
+              {!openSidebar && <MdMenu />}
+              {openSidebar && <MdClose />}
+            </button>
         </ul>
 
         <Menu menu={data.site.siteMetadata.sidebarMenu}/>

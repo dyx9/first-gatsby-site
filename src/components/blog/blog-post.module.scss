@@ -49,7 +49,6 @@ a:visited {
 
   @media only screen and (max-width: $mobile-device-max-width) {
     font-size: $mobile-post-title-font-size;
-    margin: $mobile-post-title-margin;
   }
 }
 
@@ -88,6 +87,14 @@ a:visited {
 .MDX-body {
   word-break: break-word;
   margin: $post-content-margin;
+  
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 50vh;
+    max-width: 100%;
+  }
 
   p, p *, ul, ol, li, h1, h2, h3, h4, h5, h6 {
     font-family: $font-family;
