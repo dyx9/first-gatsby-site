@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `first gatsby site`,
-    siteUrl: `https://www.yourdomain.tld`,
-    description: `tba`,
+    title: `Yixuan's Space`,
+    siteUrl: `https://daiyixuan.netlify.app/`,
+    description: `Yixuan Dai's Website, created for blogging, and displaying portfolio`,
+    author: `Yixuan Dai`,
+
     sidebarMenu: [
       {url: 'about', label: 'About'},
       {url: 'blog', label: 'Blog'},
@@ -15,7 +17,7 @@ module.exports = {
       copyright: `https://github.com/dyx9`,
     },
     social: {
-      email: `mailto:tba@tba.com`,
+      email: `dyxjob@gmail.com`,
       github: `https://github.com/dyx9`,
       linkedin: `https://www.linkedin.com/in/dyx9/`,
       twitter: `https://twitter.com/yixuan_9`,
@@ -30,6 +32,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
     
     {
       resolve: "gatsby-source-filesystem",

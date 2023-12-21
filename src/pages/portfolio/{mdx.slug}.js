@@ -1,9 +1,11 @@
 import * as React from 'react'
+import { graphql } from 'gatsby'
+import { getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout/layout'
+import SEO from '../../components/seo'
 import Sidebar from '../../components/sidebar/sidebar'
 import Main from '../../components/layout/main'
 import BlogPost from '../../components/blog/blog-post'
-import { graphql } from 'gatsby'
 
 
 const PortfolioPage = ({ data }) => {
@@ -12,6 +14,11 @@ const PortfolioPage = ({ data }) => {
   const tableOfContents = data.mdx.tableOfContents.items;
   return (
     <Layout pageTitle={frontmatter.title}>
+      <SEO 
+        title={frontmatter.title}
+        description={frontmatter.description || data.mdx.excerpt}
+        image={getImage(frontmatter.hero_image)}
+      />
       <Sidebar toc={tableOfContents}/>
       <Main>
         <BlogPost

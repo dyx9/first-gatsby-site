@@ -1,11 +1,13 @@
 import * as React from 'react'
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout'
 import Sidebar from '../../components/sidebar/sidebar';
 import Main from '../../components/layout/main';
 import BlogPost from '../../components/blog/blog-post';
 import Pagination from '../../components/blog/pagination';
 import MyDisqus from '../../components/blog/disqus';
+import SEO from '../../components/seo';
 
 
 
@@ -23,6 +25,11 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout pageTitle={frontmatter.title}>
+      <SEO 
+        title={frontmatter.title}
+        description={frontmatter.description || data.mdx.excerpt}
+        image={getImage(frontmatter.hero_image)}
+      />
       <Sidebar toc={tableOfContents}/>
       <Main>
         <BlogPost 
@@ -63,6 +70,7 @@ export const query = graphql`
         title
       }
       tableOfContents
+      excerpt(pruneLength: 160)
     }
   }  
 `
