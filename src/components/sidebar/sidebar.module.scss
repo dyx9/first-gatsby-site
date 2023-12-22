@@ -2,6 +2,7 @@
 
 
 .sidebar {
+	font-family: $general-font-family;
 	width: 25%;
 	height: 100vh;
 	padding-top: $page-padding-top;
@@ -11,6 +12,8 @@
 	flex-direction: column;
 	text-align: right;
 	user-select: none;
+	box-shadow: 10px 0 16px rgb(0 0 0 / 12%);
+
 
 	/* Detailed Rules for Sidebar */
 
