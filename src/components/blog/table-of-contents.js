@@ -1,16 +1,14 @@
 import { Link } from 'gatsby';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import * as styles from './table-of-contents.module.scss';
 
 const TableOfContents = ({ items }) => {
-
-  const idList = getIds(items);
+  const idList = useMemo(() => getIds(items), [items]);
   const activeId = useActiveId(idList);
 
   function getIds(items) {
     return items.reduce((acc, item) => {
       if (item.url) {
-        // url has a # as first character, remove it to get the raw CSS-id
         acc.push(item.url.slice(1));
       }
       if (item.items) {
@@ -19,9 +17,10 @@ const TableOfContents = ({ items }) => {
       return acc;
     }, []);
   }
-  
+
   function useActiveId(itemIds) {
-    const [activeId, setActiveId] = useState(`test`);
+    const [activeId, setActiveId] = useState('');
+
     useEffect(() => {
       const observer = new IntersectionObserver(
         (entries) => {
@@ -31,19 +30,22 @@ const TableOfContents = ({ items }) => {
             }
           });
         },
-        { rootMargin: `0% 0% -80% 0%` }
+        { rootMargin: '0% 0% -80% 0%' }
       );
+
       itemIds.forEach((id) => {
-        observer.observe(document.getElementById(id));
+        const element = document.getElementById(id);
+        if (element) observer.observe(element);
       });
+
       return () => {
         itemIds.forEach((id) => {
-          if (typeof(observer) === Element) {
-            observer.unobserve(document.getElementById(id));
-          }
+          const element = document.getElementById(id);
+          if (element) observer.unobserve(element);
         });
       };
-    }, [itemIds]);
+    }, [itemIds]); // Dependencies
+
     return activeId;
   }
 
@@ -59,14 +61,14 @@ const TableOfContents = ({ items }) => {
           </li>
         ))}
       </ol>
-    )
-  }
+    );
+  };
 
   return (
     <div className={styles.tocContainer}>
       {renderItemsRecursively(items, activeId)}
     </div>
-  )
-}
+  );
+};
 
-export default TableOfContents
+export default TableOfContents;
