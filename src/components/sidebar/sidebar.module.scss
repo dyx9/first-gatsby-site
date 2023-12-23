@@ -73,6 +73,7 @@
 .mobile-header {
 	display: none;
 	background-color: rgba(255, 255, 255, 0.92);
+	box-shadow: 10px 0 16px rgb(0 0 0 / 12%);
 	.logo a{
 		font-size: 1.5em;
 	}
@@ -83,6 +84,7 @@
 		width: $header-height;
 		background-color: transparent;
 		color: $theme-colour-highlight;
+		font-size: 1.5em;
 	}
 
 	/* Responsive Design for Mobile */

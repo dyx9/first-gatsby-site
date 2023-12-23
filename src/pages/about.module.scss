@@ -1,0 +1,47 @@
+@use '../sass/base' as *;
+@use '../sass/variables' as *;
+@import url('https://fonts.cdnfonts.com/css/spline-sans-mono');
+
+
+.about-container {
+    font-family: Spline Sans Mono, monospace;
+    font-size: 1rem;
+    margin: 2em;
+
+    #line-one {
+        font-size: $line-one-font-size;
+        margin: $line-one-margin;
+    }
+
+
+    p {
+        margin: 1em 0 1em 0;
+    }
+
+
+    .resume-container {
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; /* Add this for vertical centering */
+
+        a {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+            font-weight: 900;
+            min-width: 20vw; /* Fixed width */
+            min-height: 15vh; /* Fixed height */
+            padding: 0; /* Adjust padding if necessary */
+            background-color: $theme-colour;
+            border-radius: 1em;
+
+            &:hover {
+                color: $theme-colour-highlight;
+                transition: 0.5s;
+            }
+            transition: 0.5s;
+        }
+
+    }
+}

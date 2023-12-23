@@ -17,7 +17,7 @@ module.exports = {
       copyright: `https://github.com/dyx9`,
     },
     social: {
-      email: `dyxjob@gmail.com`,
+      email: `mailto:dyxjob@gmail.com`,
       github: `https://github.com/dyx9`,
       linkedin: `https://www.linkedin.com/in/dyx9/`,
       twitter: `https://twitter.com/yixuan_9`,
