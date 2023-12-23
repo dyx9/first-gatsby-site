@@ -23,7 +23,7 @@ a:visited {
 		background: linear-gradient(to top, black, rgba(255, 255, 255, 0));
 
     a {
-      font-family: $font-family;
+      font-family: $general-font-family;
       padding: 5px;
       color: white;
       position: absolute;
@@ -42,6 +42,9 @@ a:visited {
 
 .title-wrapper {
   margin: $post-title-margin;
+  @media only screen and (max-width: $mobile-device-max-width) {
+    margin: $mobile-post-title-margin;
+  }
 }
 
 .title {
