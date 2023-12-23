@@ -14,9 +14,6 @@ const TagsListTemplate = ({ data }) => {
     <Layout pageTitle="Tags List">
       <Sidebar />
       <Main>
-        {/* {nodes.map(node => 
-          <p>{node.fieldValue}</p>
-        )} */}
         <TagsList nodes={nodes} />
       </Main>
     </Layout>
@@ -25,7 +22,7 @@ const TagsListTemplate = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(filter: {fileAbsolutePath: {regex: "/blog/"}}) {
+    allMdx(filter: {fileAbsolutePath: {regex: "/portfolio/"}}) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

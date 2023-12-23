@@ -123,11 +123,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   });
 
+    // Generate portfolio tags-list page
+    createPage({
+      path: `/portfolio/tags`,
+      component: path.resolve("./src/templates/portfolio/tags-list.js"),
+    })
+
   // Generate portfolio tags page
   portfolioTags.forEach(tag => {
     createPage({
       path: `/portfolio/tags/${_.kebabCase(tag.fieldValue)}`,
-      component: path.resolve("./src/pages/portfolio/tags.js"),
+      component: path.resolve("./src/templates/portfolio/tags.js"),
       context: { 
         currentTag: tag.fieldValue,
         count: tag.totalCount,

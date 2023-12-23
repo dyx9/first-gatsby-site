@@ -11,6 +11,10 @@
     #line-one {
         font-size: $line-one-font-size;
         margin: $line-one-margin;
+        
+        @media only screen and (max-width: $mobile-device-max-width) {
+            display: none;
+        }
     }
 
 
