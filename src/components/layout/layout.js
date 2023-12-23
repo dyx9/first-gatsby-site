@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as styles from './layout.module.scss';
+import MobileNav from '../mobile-nav/mobile-nav';
 
 
 const Layout = ({ pageTitle, children }) => {
@@ -18,6 +19,9 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div className={styles.container}>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+      <div className={styles.mobileNav}>
+        <MobileNav />
+      </div>
       {children}
     </div>
   )
