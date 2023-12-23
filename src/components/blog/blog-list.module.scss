@@ -38,7 +38,7 @@
       // }
 
       &:after {
-        display:block;
+        display: block;
         content: '';
         padding-bottom: 2px;
         border-bottom: solid 3px $theme-colour-highlight;  
@@ -49,8 +49,7 @@
 
     /* blog time */
     .post-time {
-      position: absolute;
-      bottom: 0;
+      position: relative;
     }
   }
 
