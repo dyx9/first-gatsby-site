@@ -10,7 +10,6 @@
   display: grid;
   grid-template-columns: 1;
   gap: 30px;
-
 }
 
 .portfolio-item {
@@ -107,16 +106,14 @@
 
 @media only screen and (max-width: $mobile-device-max-width) {
   .portfolio-item {
-    min-height: 30vh;
-    max-height: 30vh;
 
     .portfolio-title {
-      font-size: 2em;
+      font-size: 1.5em;
       margin-bottom: 0.2em;
     }
 
     .portfolio-info {
-      font-size: 1em;
+      font-size: 0.8em;
       opacity: 1;
     }
 
