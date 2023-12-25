@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import * as styles from './mobile-nav.module.scss';
 import { useLocation } from "@reach/router";
-
+import * as styles from './mobile-nav.module.scss';
 
 const MobileNav = () => {
 
