@@ -1,3 +1,2 @@
-portfolio/* linguist-vendored
-blog/* linguist-vendored
-
+*.MDX linguist-vendored
+*.mdx linguist-vendored

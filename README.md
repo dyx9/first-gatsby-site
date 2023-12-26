@@ -4,5 +4,5 @@
   </a>
 </p>
 <h1 align="center">
-  A webste based on Gatsby
+  A website based on Gatsby
 </h1>
