@@ -1,0 +1,160 @@
+---
+title: "Event Listener"
+date: "2021-07-25"
+date_updated: "2022-07-25"
+tags: ["JavaScript"]
+hero_image: "./mountain3.jpg"
+hero_image_alt: "mountain3"
+hero_image_credit_text: "Roman Nguyen"
+hero_image_credit_link: "https://unsplash.com/photos/5ykyPNILfWM"
+---
+
+
+# Event Listener Basics
+
+## Create an Event Listener
+
+```javascript
+const button = document.querySelector("button")
+button.addEventListener("click", e => {
+  console.log(e)
+})
+```
+
+The `addEventListener` can take up to **3** parameters, the third one is optional. 
+
+- The first parameter, here, `'click'`, specifies the event you’d like to listen to, e.g., mouse click, mouse move..., a complete list of events can be found [here](https://developer.mozilla.org/en-US/docs/Web/Events).
+- The second parameter is a callback function that has one single argument which is the event argument, commonly called `e`.
+- Details about the third parameter can be found [here](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#parameters).
+
+## Remove an Event Listener
+
+- To remove an event listener, the callback function you pass into `removeEventListener` should be exactly the same as the one you passed into `addEventListener` before.
+
+```jsx
+button.addEventListener("click", sayHi)
+button.removeEventListener("click", sayHi)
+
+function sayHi() {
+  console.log("Hi")
+}
+```
+
+- Arrow functions won’t work, because they are essentially two different anonymous functions.
+
+```jsx
+button.addEventListener("click", () => {
+  console.log("Hi")
+})
+
+// this won't work!
+
+button.removeEventListener("click", () => {
+  console.log("Hi")
+})
+```
+
+# Event Propagation
+
+## Event Bubbling / Capturing
+
+When an event is triggered on an element it will bubble that event up the document tree to all the elements the element is inside of, while the direction is reversed in capturing phase, that is from the top level element to the element we trigged.
+
+An example to setup a capture event listener:
+
+```jsx
+parent.addEventListener("click", () => {
+  console.log("Parent Capture")
+}, { capture: true })
+```
+
+A great video that explains this: [video](https://youtu.be/XF1_MlZ5l6M?t=232)
+
+## Stopping Event Propagation
+
+`stopPropagation` stops the event from continuing its capturing and bubbling
+
+```jsx
+parent.addEventListener("click", e => {
+    console.log("Parent");
+})
+
+child.addEventListener("click", e => {
+    console.log("Child1");
+    e.stopPropagation();
+})
+
+child.addEventListener("click", e => {
+    console.log("Child2");
+})
+
+// 'Child 1' and 'Chind 2' will be logged
+```
+
+`stopImmediatePropagation` will not only stop propagation to the child/parent elements through the bubble and capture phases, but it will also stop other events on the element from triggering as well.
+
+```jsx
+parent.addEventListener("click", e => {
+    console.log("Parent");
+})
+
+child.addEventListener("click", e => {
+    console.log("Child1");
+    e.stopImmediatePropagation();
+})
+
+child.addEventListener("click", e => {
+    console.log("Child2");
+})
+
+// Only 'Child 1' will be logged
+```
+
+# Event Delegation
+
+```jsx
+const buttons = document.querySelectorAll("button")
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    console.log("Clicked Button")
+  })
+})
+
+const newButton = document.createElement("button")
+document.body.append(newButton) // does not have the event listener
+```
+
+The above code shows a common situation that the newly added button won’t have the event listener that we added previously, in this case, we need to manually add an event listener to it, which is less efficient and less easy to manage the event listener, hence, more prone to error. A more elegant and smart way is to use **Event Delegation**, which sets up the event listener on a parent element, such as the document, example below:
+
+```jsx
+document.addEventListener("click", e => {
+  if (e.target.matches("button")) {                           (*)
+    console.log("Clicked Button")
+  }
+})
+
+const newButton = document.createElement("button")
+document.body.append(newButton)
+```
+
+In the `(*)` line, we use a `if` statement to check if the target of the event matches the one we’d like to listen to, so in this case, we can ensure every button even the newly added ones will have the same event listener we’d like to add.
+
+A helper function to use event delegation, from [here](https://blog.webdevsimplified.com/2022-01/event-listeners/):
+
+```jsx
+function addGlobalEventListener(type, selector, callback, options) {
+  document.addEventListener(type, e => {
+    if (e.target.matches(selector)) callback(e)
+  }, options)
+}
+
+addGlobalEventListener("click", ".btn", () => {
+  console.log("Clicked Button")
+}, { once: true })
+```
+
+# Reference
+
+[https://blog.webdevsimplified.com/2022-01/event-listeners/](https://blog.webdevsimplified.com/2022-01/event-listeners/)
+
+[https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
