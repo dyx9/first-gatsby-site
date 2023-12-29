@@ -169,6 +169,15 @@ a:visited {
     margin: 20px;
   }
 
+  blockquote {
+    margin: 0.5em 1.5em;
+    border-left-color: $theme-colour-highlight;
+    background-color: $theme-colour;
+    border-left-width: 0.2em;
+    border-left-style: solid;
+    padding: 0.5em;
+  }
+
   @media only screen and (max-width: $mobile-device-max-width) {
 
     margin: $mobile-post-content-margin;
