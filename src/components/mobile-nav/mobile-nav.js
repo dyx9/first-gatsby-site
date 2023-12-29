@@ -20,7 +20,7 @@ const MobileNav = () => {
         <div className={styles.mobileNavContainer}>
         {parentPaths.map((parent, index) => (
             <span key={index}>
-                {index > 0 && ' > '}
+                {index > 0 && ' → '}
                 <Link to={parent.path}> {parent.name}</Link>
             </span>
         ))}
