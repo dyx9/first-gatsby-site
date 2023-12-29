@@ -178,6 +178,23 @@ a:visited {
     padding: 0.5em;
   }
 
+  aside {
+    margin: 0.5em 1.5em;
+    background-color: $theme-colour;
+    border-radius: 5px;
+    padding: 0.5em;
+  }
+
+  iframe {
+    display: block;
+    margin: auto;
+    max-width: 60vw;
+    @media only screen and (max-width: $mobile-device-max-width) {
+      max-width: 90vw;
+      max-height: 60vw;
+    }
+  }
+
   @media only screen and (max-width: $mobile-device-max-width) {
 
     margin: $mobile-post-content-margin;
