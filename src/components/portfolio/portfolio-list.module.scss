@@ -32,7 +32,7 @@
     left: 5%;
     padding-right: 10%;
     font-size: 3em;
-    font-family: 'Spline Sans Mono', sans-serif;
+    font-family: $general-font-family;
     font-weight: 900;
     color: white;
 
@@ -87,19 +87,32 @@
   opacity: 0; // Initially hidden
   color: white;
 
-  font-family: 'Spline Sans Mono', sans-serif;
+  font-family: $general-font-family;
   font-weight: 900;
 
   padding-right: 10%;
   .tags {
+    font-family: 'Spline Sans Mono', sans-serif;
     position: relative;
     top: 10px;
     color: black;
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 2px 5px 2px 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    // color: white;
+    // background-color: black;
+    // border-style: solid;
+    // border-color: $theme-colour;
+    padding: 5px 10px 5px 10px;
     margin: 0 4px 0 0;
     border-radius: 10px;
   }
+
+  // p {
+  //   position: relative;
+  //   top: 1em;
+  //   // background-color: rgba(69, 69, 69, 0.5);
+  //   // padding: 2px 5px 2px 5px;
+  //   // border-radius: 10px;
+  // }
 
 }
 
