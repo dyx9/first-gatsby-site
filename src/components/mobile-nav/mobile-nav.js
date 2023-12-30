@@ -8,7 +8,7 @@ const MobileNav = () => {
     const location = useLocation();
     const pathSegments = location.pathname.split('/').filter(Boolean);
 
-    const parentPaths = [{ name: 'Home', path: '/' }];
+    const parentPaths = [{ name: 'home', path: '/' }];
   
     pathSegments.forEach((segment, index) => {
         const pathToSegment = `/${pathSegments.slice(0, index + 1).join('/')}`;
@@ -20,7 +20,7 @@ const MobileNav = () => {
         <div className={styles.mobileNavContainer}>
         {parentPaths.map((parent, index) => (
             <span key={index}>
-                {index > 0 && ' → '}
+                {index > 0 && ' > '}
                 <Link to={parent.path}> {parent.name}</Link>
             </span>
         ))}
