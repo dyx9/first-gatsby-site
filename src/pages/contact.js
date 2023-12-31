@@ -13,8 +13,8 @@ const ContactPage = () => {
         <div className={styles.contactContainer}>
           <p id={styles.lineOne}>Let's Talk</p>
           <p>I plan to build a form that you can send a message to me directly from this page, but for now, feel free to use social media links from the sidebar (or the drop-down menu if you're visiting this page from a mobile device) </p>
-          <form name="contact" method="POST" netlify>
-            {/* <input type="hidden" name="form-name" value="contact" /> */}
+          <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
             <p>
               <label>Your Name: <input type="text" name="name" /></label>
             </p>
