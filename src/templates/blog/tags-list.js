@@ -17,7 +17,7 @@ const TagsListTemplate = ({ data }) => {
         {/* {nodes.map(node => 
           <p>{node.fieldValue}</p>
         )} */}
-        <TagsList nodes={nodes} />
+        <TagsList page={"blog"} nodes={nodes} />
       </Main>
     </Layout>
   )

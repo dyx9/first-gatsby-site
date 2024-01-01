@@ -14,7 +14,7 @@ const TagsListTemplate = ({ data }) => {
     <Layout pageTitle="Tags List">
       <Sidebar />
       <Main>
-        <TagsList nodes={nodes} />
+        <TagsList page={"portfolio"} nodes={nodes} />
       </Main>
     </Layout>
   )
