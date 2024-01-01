@@ -12,23 +12,45 @@ const ContactPage = () => {
       <Main>
         <div className={styles.contactContainer}>
           <p id={styles.lineOne}>Let's Talk</p>
-          <p>I plan to build a form that you can send a message to me directly from this page, but for now, feel free to use social media links from the sidebar (or the drop-down menu if you're visiting this page from a mobile device) </p>
+          <p className={styles.contentDesktop}>You can send me a message using the form below, or use the social media links in the sidebar.</p>
+          <p className={styles.contentMobile}>You can send me a message using the form below, or use the social media links in the drop-down menu.</p>
+          <div className={styles.formContainer}>
 
-          <form name="contact" method="POST" action="about" netlify>
-            <input type="hidden" name="form-name" value="contact" />
-            <p>
-              <label>Your Name: <input type="text" name="name" /></label>
-            </p>
-            <p>
-              <label>Your Email: <input type="email" name="email" /></label>
-            </p>
-            <p>
-              <label>Message: <textarea name="message"></textarea></label>
-            </p>
-            <p>
+            <form name="contact" method="POST" action="/about" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact" />
+
+              <div className={styles.inputArea}>
+                <input type="text" name="name" required/>
+                <label>Your name</label>
+              </div>
+              <div className={styles.inputArea}>
+                <input type="text" name="contact" required/>
+                <label>How can I get back to you</label>
+              </div>
+              <div className={styles.inputArea}>
+                <textarea type="message" required/>
+                <label>Your message</label>
+              </div>
               <button type="submit">Send</button>
-            </p>
-          </form>
+
+              
+              {/* <p>
+                <label>Your Name: <input type="text" name="name" required/></label>
+              </p>
+              <p>
+                <label>Your Email: <input type="email" name="email" required/></label>
+              </p>
+              <p>
+                <label>Message: <textarea name="message" required></textarea></label>
+              </p>
+              <p>
+                <button type="submit">Send</button>
+              </p> */}
+            </form>
+
+
+          </div>
+
         </div>
       </Main>
     </Layout>
