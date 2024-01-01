@@ -16,7 +16,7 @@ const ContactPage = () => {
           <p className={styles.contentMobile}>You can send me a message using the form below, or use the social media links in the drop-down menu.</p>
           <div className={styles.formContainer}>
 
-            <form name="contact" method="POST" action="/about" data-netlify="true">
+            <form name="contact" method="POST" data-netlify="true">
               <input type="hidden" name="form-name" value="contact" />
 
               <div className={styles.inputArea}>
@@ -33,19 +33,6 @@ const ContactPage = () => {
               </div>
               <button type="submit">Send</button>
 
-              
-              {/* <p>
-                <label>Your Name: <input type="text" name="name" required/></label>
-              </p>
-              <p>
-                <label>Your Email: <input type="email" name="email" required/></label>
-              </p>
-              <p>
-                <label>Message: <textarea name="message" required></textarea></label>
-              </p>
-              <p>
-                <button type="submit">Send</button>
-              </p> */}
             </form>
 
 
