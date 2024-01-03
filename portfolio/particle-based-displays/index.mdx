@@ -1,8 +1,8 @@
 ---
 title: "Particle-Based Display"
-date: "2022-07-23"
+date: "2023-08-29"
 date_updated: 
-tags: ["Software Development", "Unity", "Empirical Research"]
+tags: ["Software Development", "Empirical Research", "Unity"]
 description: This is the test post that will be used to test functions, including layouts, responsive design, scss modules
 hero_image: "./hero.jpg"
 hero_image_alt: "mountain1"
@@ -11,7 +11,10 @@ hero_image_credit_link: "https://unsplash.com/photos/O453M2Liufs"
 ---
 
 import Initialisation from './initialisation.png';
-
+import Detection from './detection.png';
+import Matching from './matching.png';
+import PotentialField from './potential-field.png';
+import Trajectory from './trajectory.png';
 
 # Introduction
 
@@ -59,14 +62,38 @@ The development of this project is based on [OpenMPD](https://github.com/RMResea
 
 The current solution employs a Logitech C920 webcam for input and the OpenCV library for image processing. This setup, however, only supports initial bead detection and cannot track their subsequent movements, hindering continuous tracking. Additionally, it depends on basic webcam images and needs manual calibration each time the system starts, which reduces speed and user experience. To address these issues, we integrated an additional tracking method using [OptiTrack](https://optitrack.com/) and its Unity Plugin. This enhancement successfully overcomes the previous limitations, improving continuous tracking and user experience.
 
+<br />
+<img src={Detection} alt="Detection" />
+<br />
+
+> The image on the left hand side shows the improved system with OptiTrack, the one on the right hand side shows a screenshot with a Unity client with OptiTrack plugin integrated.
+
 ## Improvement of Task Allocation
 
 The existing solution assigns beads to destinations using a first-come-first-serve approach, which is inefficient for large quantities of beads as it doesn't consider minimising overall travel distance. To improve this, we introduced two algorithms: a brute force method for scenarios with fewer than 6 beads, and [The Hungarian Algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm) for larger bead counts. This approach guarantees optimal matching, ensuring the minimum overall travel distance, while also maintaining efficiency in terms of time complexity.
+
+<br />
+<img src={Matching} alt="Matching" />
+<br />
+
+> This figure demonstrates a simple allocation example using two beads. Figure A shows a suboptimal allocation result, which increases the overall travel distance, while Figure B is an optimal matching. The dashed line indicates the trajectory
+
+
 
 ## Introduction of Path Planning
 
 Another important aspect of initiation is to avoid collisions of beads, otherwise the system will fail. At that date of time, there was no implementation of path planning, so we introduced our own method. We adopted the concept of [a potential field](https://en.wikipedia.org/wiki/Scalar_potential), which can be envisioned as a landscape of hills and valleys. The current moving bead can be seen as a ball rolling in this landscape. Its target position represents the deepest valley drawing the bead towards its destination. Conversely, existing particles (obstacles) can be analogised to hills, preventing the bead from getting too close.
 
+<img src={PotentialField} alt="Potential Field" />
+
+> Figure A shows a modelled potential field with a 3D scatter plot, each axis corresponds to the axis of the levitator, while the potential is encoded by the colour. The predominant purple hue signifies a negative potential, which pulls the bead into the target position (red dot). Conversely, The colour around the two obstacles (blue dots) is yellow, indicating the high potential to repel surrounding particles. Figure B is a visualisation of the potential field with a fixed Z coordinate (z = 0), which is a ‘slice’ of Figure A, providing a clearer view of the potential field. Figure C employs a hills-and-valleys metaphor: Hills represent the positions of obstacles, repelling approaching particles, while the valley represents the target position, drawing beads into the destination. The red line denotes the moving direction of the particle.
+
 # Evaluations
 
 Our in-lab evaluation, comprising 240 trials, indicated a significant enhancement in the initialisation process. The improvements were notable in both the success rate and the completion time, with a maximum improvement of up to **four times** compared to the original method.
+
+<br />
+
+<img src={Trajectory} alt="Trajectory" />
+
+> Particle trajectory with collision avoidance for different numbers of obstacles, which shows no particle enters into the collision area of obstacles (represented by the elliptical shape).
