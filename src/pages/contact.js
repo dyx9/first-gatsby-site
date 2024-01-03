@@ -28,7 +28,7 @@ const ContactPage = () => {
                 <label>How can I get back to you</label>
               </div>
               <div className={styles.inputArea}>
-                <textarea type="message" required/>
+                <textarea type="message" name="message" required/>
                 <label>Your message</label>
               </div>
               <button type="submit">Send</button>
