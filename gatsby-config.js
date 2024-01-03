@@ -21,7 +21,7 @@ module.exports = {
       github: `https://github.com/dyx9`,
       linkedin: `https://www.linkedin.com/in/dyx9/`,
       twitter: `https://twitter.com/yixuan_9`,
-      telegram: `https://tba.com`,
+      telegram: `https://t.me/yixuan9`,
     },
   },
 

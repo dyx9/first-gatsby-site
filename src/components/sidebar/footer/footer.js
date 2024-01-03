@@ -11,7 +11,7 @@ const Footer = ({ footer }) => {
         &nbsp;and inspired by&nbsp;
         <a href={footer.inspired} target="_blank" rel="noreferrer">Breeze Theme</a>
       </p>
-      <p>© 2023 Copyright&nbsp;
+      <p>© 2024 Copyright&nbsp;
         <a href={footer.copyright} target="_blank" rel="noreferrer">Yixuan</a>
         &nbsp;All rights reserved.</p>
     </div>
