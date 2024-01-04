@@ -1,0 +1,112 @@
+---
+title: "Remote Touchscreen Control"
+date: "2021-04-01"
+date_updated: 
+tags: ["Software Development", "Interaction Design", "Empirical Research"]
+description: An undergraduate dissertation exploring the interaction between smartphones and public displays
+hero_image: "./hero.png"
+hero_image_alt: "AI-generated Image -- remote touchscreen control"
+hero_image_credit_text: "DALL·E 3"
+hero_image_credit_link: "https://openai.com/dall-e-3"
+---
+
+
+import Tilt from './tilt.png';
+import TiltHaptic from './tilt-haptic.png';
+import Touchscreen from './touchscreen.png';
+import Fitts from './fitts.png';
+import BubbleCursor from './bubble-cursor.png';
+import System from './system.png';
+import Phone from './phone.png';
+import Interface from './interface.png';
+import Results from './results.png';
+
+# Introduction
+
+This independent undergraduate dissertation, which lasted six months, investigated potential interaction techniques during the COVID-19 period. It proposed and developed a new modality for interaction with public displays.
+
+# Background
+
+During the COVID-19 period, directly contacting public screens, such as information kiosks, can be somewhat concerning due to hygiene issues. Therefore, there is a desire to interact with public displays in a way that does not involve using hands, namely through remote touchscreen control. 
+
+The literature reveals numerous techniques for interacting with public displays without directly touching the screen. To name a few, these include a motion tracking system with reflective markers, and methods that use everyday objects such as Wiimotes or laser pointers. However, all of these require additional devices to complete tasks, which is less feasible for everyday interaction with public screens. On the other hand, the use of ubiquitous personal devices —mobile phones — appears promising as a medium to interact with public displays. Consequently, this project focused on interactions between phones and public screens. Specifically, it concentrated on improving IMUs-based phone input (Tilt input) due to the existence of a research gap.
+
+# Interaction Design
+
+## Complete the Closed Loop
+
+The closed-loop representation of an interactive system depicts a cycle where the system continually interacts with the user, receives feedback, and adjusts its behaviour based on that feedback.
+
+For example, a closed-loop representation of interacting with a touchscreen can described as:
+
+<img src={Touchscreen} alt="Touchscreen" />
+
+> The human uses their hand (effector) to touch the screen. The system receives this act of touch (sensor) and then provides a visual cue (feedback) for the user. The user receives this feedback through their eyes (perception).
+
+<br/>
+
+Similarly, a closed-loop representation of interacting by using IMUs can described as:
+
+<img src={Tilt} alt="Tilt" />
+
+> Unlike the previous example, interactions that rely on IMUs, such as tilt input, typically lack the provision of feedback. Consequently, the user is unable to perceive a direct signal.
+
+<br/>
+
+Therefore, we proposed an improvement of the conventional Tilt input by adding haptic as the feedback:
+
+<img src={TiltHaptic} alt="Tilt Haptic" />
+
+> The haptic feedback provide an instant signal to the user.
+
+<br/>
+
+## Fitts’ Law
+
+The IMUs-based input is notoriously known for its noise-sensitive characteristics, making it difficult to use it as an accurate input device. In addition to applying modern noise-reduction algorithms, we proposed a novel interaction technique that combines the traditional Tilt input with Bubble Cursor, which follows Fitts’ Law to improve the overall completion time and accuracy. In a nutshell, Bubble Cursor works by dynamically resizing the activation area around the cursor to encompass the nearest target object, making it easier to select nearby objects like buttons or links.
+
+<img src={Fitts} alt="Fitts Law" />
+
+Fitts’ Law suggests that the index of difficulty (*ID*) is proportional to the distance to the target (2*D*) and inversely proportional to the width of the target (*W*). This means that acquiring a target is easier if the distance is short or the target size is large.
+
+Bubble Cursor exploits this principle by reducing the distance and resizing the activation area, thereby decreasing the index of difficulty and making target acquisition easier.
+
+<img src={BubbleCursor} alt="Bubble Cursor" />
+
+> (a) shows the normal cursor, to acquire a target, the cursor needs to hover on a target explicitly. (b) shows Bubble Cursor, the activation area (the green bubble) will dynamically change, it will acquire the closest target without explicit hovering.
+
+
+
+# Implementation
+
+## System Design
+
+<img src={System} alt="System Design" />
+
+## Desktop Server
+
+A desktop server, built to run on a computer, is responsible for data interchange between the desktop and the mobile phone. This includes converting sensor data from the mobile phone into mouse controls and instructing the phone when to provide haptic feedback.
+
+## Android Client
+
+An Android application was built to support basic input, for example, user movement data from IMUs, and the click action.
+
+<img src={Phone} alt="Phone" />
+
+> Screenshots of the mobile client, it requres the IP address of the desktop server to establish socket connection, then the user will be able to tilt the phone and click the button to control the remote display.
+
+
+## Interface
+
+The interface was built on top of a web page, it uses JavaScript to implement the Bubble Cursor, as well as the socket connection between the browser and the server.
+
+<br/>
+
+<img src={Interface} alt="Interface" />
+
+
+# Evaluations
+
+<img src={Results} alt="Quantative Results" />
+
+> The raincloud plot illustrates the overall performance of the different techniques. The distribution of the data is represented by the ‘cloud’ and the jittered raw data is represented by the ‘rain’. The error bars show 95% confidence intervals. (a) shows the overall completion time of each technique, (b) shows the overall count of input errors for each technique.
