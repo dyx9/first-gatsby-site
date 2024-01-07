@@ -14,9 +14,9 @@ const IndexPage = ({ data }) => {
       <Sidebar />
       <Main >
         <div className={styles.indexContainer} >
-          <p id={styles.lineOne}>Hi, I'm Yixuan 👋</p>
-          <p>I'm currently looking for..., you can find more about me on this <Link to='about'>page</Link>.</p>
-          <p>Sometimes I write <Link to='blog'>blogs</Link> - some delve into technical subjects, while others record daily musings. </p>
+          <p id={styles.lineOne}>Hi 👋</p>
+          <p>It's great to see you here, you can find more about me on this <Link to='about'>page</Link>.</p>
+          <p>I write <Link to='blog'>blogs</Link> occasionally - some delve into technical subjects, while others record daily musings. </p>
           
           <p>My <Link to='portfolio'>portfolio</Link> 
             {' '} showcases a variety of projects, spanning

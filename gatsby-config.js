@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Yixuan's Space`,
-    siteUrl: `https://daiyixuan.netlify.app/`,
+    title: `Yixuan`,
+    siteUrl: `https://www.daiyixuan.com/`,
     description: `Yixuan Dai's Website, created for blogging, and displaying portfolio`,
     author: `Yixuan Dai`,
 
@@ -17,7 +17,7 @@ module.exports = {
       copyright: `https://github.com/dyx9`,
     },
     social: {
-      email: `mailto:dyxjob@gmail.com`,
+      email: `mailto:contact@daiyixuan.com`,
       github: `https://github.com/dyx9`,
       linkedin: `https://www.linkedin.com/in/dyx9/`,
       twitter: `https://twitter.com/yixuan_9`,

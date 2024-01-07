@@ -46,7 +46,7 @@ const Sidebar = ({ page, toc, tags }) => {
 
         {/* mobile header */}
         <ul className={styles.mobileHeader}>
-            <li className={styles.logo}> <Link to="/">Yixuan's Space</Link> </li>
+            <li className={styles.logo}> <Link to="/">Yixuan</Link> </li>
             {/* <a href='#' onClick={() => setOpenSidebar(!openSidebar)} onKeyDown={() => setOpenSidebar(!openSidebar)}>
                 {!openSidebar && <MdMenu />}
                 {openSidebar && <MdClose />}
