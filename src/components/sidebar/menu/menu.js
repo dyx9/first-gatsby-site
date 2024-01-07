@@ -14,7 +14,7 @@ const Menu = ({ menu }) => {
     <>
       <ul className={styles.menu}>
         <li className={styles.logo}> 
-          <Link activeClassName={styles.logoActive} to="/">Yixuan's Space</Link> 
+          <Link activeClassName={styles.logoActive} to="/">Yixuan Dai</Link> 
         </li>
         {
           menu.map(m => 
