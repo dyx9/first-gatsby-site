@@ -13,7 +13,7 @@ module.exports = {
     ],
     footer: {
       powered: `https://www.gatsbyjs.com`,
-      inspired: `https://github.com/izackwu/gatsby-starter-breeze`,
+      inspired: `https://github.com/dyx9/breeze-theme-plus`,
       copyright: `https://github.com/dyx9`,
     },
     social: {

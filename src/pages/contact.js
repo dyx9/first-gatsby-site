@@ -20,16 +20,16 @@ const ContactPage = () => {
               <input type="hidden" name="form-name" value="contact" />
 
               <div className={styles.inputArea}>
-                <input type="text" name="name" required/>
-                <label>Your name</label>
+                <input id="name" type="text" name="name" required/>
+                <label htmlFor="name" >Your name</label>
               </div>
               <div className={styles.inputArea}>
-                <input type="text" name="contact" required/>
-                <label>How can I get back to you</label>
+                <input id="contact" type="text" name="contact" required/>
+                <label htmlFor="contact">How can I get back to you</label>
               </div>
               <div className={styles.inputArea}>
-                <textarea type="message" name="message" required/>
-                <label>Your message</label>
+                <textarea id="message" type="message" name="message" required/>
+                <label htmlFor="message">Your message</label>
               </div>
               <button type="submit">Send</button>
 

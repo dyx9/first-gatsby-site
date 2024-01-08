@@ -8,8 +8,8 @@ const Footer = ({ footer }) => {
       <p>
         Powered by&nbsp;
         <a href={footer.powered} target="_blank" rel="noreferrer">Gatsby</a>
-        &nbsp;and inspired by&nbsp;
-        <a href={footer.inspired} target="_blank" rel="noreferrer">Breeze Theme</a>
+        &nbsp;and &nbsp;
+        <a href={footer.inspired} target="_blank" rel="noreferrer">Breeze Theme+</a>
       </p>
       <p>© 2024 Copyright&nbsp;
         <a href={footer.copyright} target="_blank" rel="noreferrer">Yixuan</a>
