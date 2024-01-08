@@ -5,7 +5,7 @@ import * as styles from './disqus.module.scss';
 const MyDisqus = ({ pageContext, frontmatter }) => {
 
     const disqusConfig = {
-        url: `https://dyx.gatsbyjs.io/blog/${pageContext.slug}`,
+        url: `https://daiyixuan.com/blog/${pageContext.slug}`,
         identifier: pageContext.slug,
         title: frontmatter.title,
     }
