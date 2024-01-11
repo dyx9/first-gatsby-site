@@ -22,6 +22,13 @@
         margin: 1em 0 1em 0;
     }
 
+    a {
+        text-decoration: underline;
+        &:hover {
+            color: $theme-colour-highlight;
+        }
+    }
+
 
     .resume-container {
 
