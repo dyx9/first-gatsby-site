@@ -14,15 +14,20 @@
 
     a {
         font-weight: 900;
-        text-decoration: underline;
-    }
+        border-bottom: 0.15em solid $theme-colour-highlight; 
+        // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 85%, $theme-colour-highlight 85%);
+        text-decoration: none;
+        transition: 0.3s;
 
-    .tag {
-        span {
-            font-style: italic;
-            background-color: $theme-colour;
+        @media only screen and (min-width: $mobile-device-max-width) {
+            &:hover {
+                transition: 0.3s;
+                padding-bottom: 0.2em;
+                border-bottom: 0.15em solid $theme-colour-highlight;
+            }
         }
     }
+
 
     p {
         margin: 1em 0 1em 0;

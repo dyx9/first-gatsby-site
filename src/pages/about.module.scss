@@ -23,9 +23,18 @@
     }
 
     a {
-        text-decoration: underline;
-        &:hover {
-            color: $theme-colour-highlight;
+        font-weight: 900;
+        border-bottom: 0.15em solid $theme-colour-highlight; /* Or whatever color you want */
+        // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 85%, $theme-colour-highlight 85%);
+        text-decoration: none;
+        transition: 0.3s;
+
+        @media only screen and (min-width: $mobile-device-max-width) {
+            &:hover {
+                transition: 0.3s;
+                padding-bottom: 0.2em;
+                border-bottom: 0.15em solid $theme-colour-highlight; /* Or whatever color you want */
+            }
         }
     }
 
