@@ -2,21 +2,22 @@ import { Link } from 'gatsby';
 import React, { useEffect, useState, useMemo } from 'react';
 import * as styles from './table-of-contents.module.scss';
 
+
+function getIds(items) {
+  return items.reduce((acc, item) => {
+    if (item.url) {
+      acc.push(item.url.slice(1));
+    }
+    if (item.items) {
+      acc.push(...getIds(item.items));
+    }
+    return acc;
+  }, []);
+}
+
 const TableOfContents = ({ items }) => {
   const idList = useMemo(() => getIds(items), [items]);
   const activeId = useActiveId(idList);
-
-  function getIds(items) {
-    return items.reduce((acc, item) => {
-      if (item.url) {
-        acc.push(item.url.slice(1));
-      }
-      if (item.items) {
-        acc.push(...getIds(item.items));
-      }
-      return acc;
-    }, []);
-  }
 
   function useActiveId(itemIds) {
     const [activeId, setActiveId] = useState('');
