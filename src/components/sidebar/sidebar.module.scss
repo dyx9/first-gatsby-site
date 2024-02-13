@@ -24,21 +24,12 @@
     	margin: auto 16px;
 		background-color: $theme-colour;
 		border-radius: 10px;
-		// transform: translateX(-100%);
 
-		// &.active {
-		// 	animation: slide-in 0.5s forwards;
-		// }
-
-		// @keyframes slide-in {
-		// 	100% { transform: translateX(0%); }
-		// }
-
-		// @keyframes slide-out {
-		// 	0% { transform: translateX(0%); }
-		// 	100% { transform: translateX(-100%); }
-		// }
-
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
 	}
 
 }
